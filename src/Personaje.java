@@ -14,6 +14,9 @@ public class Personaje {
         this.dichos = dichos;
     }
 
+    public Personaje() {
+    }
+
     // Métodos para gestionar poderes
     public void agregarPoder(String poder) {
         poderes.add(poder);
