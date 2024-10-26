@@ -23,4 +23,3 @@ public class Antiheroe extends Personaje {
         this.nivelAmenaza = nivelAmenaza;
     }
 }
-
