@@ -1,10 +1,10 @@
 public class Persona {
-    String nombre;
-    int edad;
-    String nacionalidad;
-    String genero;
-    String altura;
-    String estado_civil;
+    private String nombre;
+    private int edad;
+    private String nacionalidad;
+    private String genero;
+    private String altura;
+    private String estado_civil;
 
     public Persona(int edad, String nombre, String nacionalidad, String genero, String altura, String estado_civil) {
         this.nombre = nombre;
@@ -15,6 +15,11 @@ public class Persona {
         this.estado_civil = estado_civil;
     }
 
+
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
     public String getNombre() {
         return nombre;
@@ -40,10 +45,6 @@ public class Persona {
         return estado_civil;
     }
 
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     public void setEdad(int edad) {
         this.edad = edad;
