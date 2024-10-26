@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 public class Personaje {
-    String nombre_personaje;
-    String alias_personaje;
-    ArrayList<String> poderes;
-    ArrayList<String> debilidades;
-    ArrayList<String> dichos;
+    private String nombre_personaje;
+    private String alias_personaje;
+    private ArrayList<String> poderes;
+    private ArrayList<String> debilidades;
+    private ArrayList<String> dichos;
     public Personaje(String nombre_personaje, String alias_personaje, ArrayList<String> poderes,
                      ArrayList<String> debilidades, ArrayList<String> dichos) {
         this.nombre_personaje = nombre_personaje;

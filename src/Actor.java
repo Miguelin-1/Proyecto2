@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 public class Actor extends Persona {
-    String alias;
-    int anosCarrera;
-    ArrayList<String> papeles;
-    ArrayList<String> premios;
+    private String alias;
+    private int anosCarrera;
+    private ArrayList<String> papeles;
+    private ArrayList<String> premios;
 
     public Actor(int edad, String nombre, String nacionalidad, String genero, String altura, String estado_civil, ArrayList<String> premios,ArrayList<String> papeles, int anosCarrera, String alias) {
         super(edad, nombre, nacionalidad, genero, altura, estado_civil);
