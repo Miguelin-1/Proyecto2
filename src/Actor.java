@@ -13,4 +13,26 @@ public class Actor extends Persona {
         this.premios = premios;
     }
 
+    public void agregarPapel(String papel) {
+        papeles.add(papel);
+    }
+
+    public ArrayList<String> getPapeles() {
+        return papeles;
+    }
+
+
+    public void agregarPremio(String premio) {
+        premios.add(premio);
+    }
+
+    public ArrayList<String> getPremios() {
+        return premios;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", Alias: " + alias + ", Años de Carrera: " + anosCarrera +
+                ", Papeles: " + papeles + ", Premios: " + premios;
+    }
 }
