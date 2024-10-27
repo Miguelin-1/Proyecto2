@@ -1,20 +1,19 @@
 import java.util.ArrayList;
-public class Personaje {
+public class Personaje extends Actor{
     private String nombre_personaje;
     private String alias_personaje;
     private ArrayList<String> poderes;
     private ArrayList<String> debilidades;
     private ArrayList<String> dichos;
-    public Personaje(String nombre_personaje, String alias_personaje, ArrayList<String> poderes,
-                     ArrayList<String> debilidades, ArrayList<String> dichos) {
+
+
+    public Personaje(int edad, String nombre, String nacionalidad, String genero, String altura, String estado_civil, ArrayList<String> premios, ArrayList<String> papeles, int anosCarrera, String alias, String nombre_personaje) {
+        super(edad, nombre, nacionalidad, genero, altura, estado_civil, premios, papeles, anosCarrera, alias);
         this.nombre_personaje = nombre_personaje;
         this.alias_personaje = alias_personaje;
         this.poderes = poderes;
         this.debilidades = debilidades;
         this.dichos = dichos;
-    }
-
-    public Personaje() {
     }
 
     // Métodos para gestionar poderes
