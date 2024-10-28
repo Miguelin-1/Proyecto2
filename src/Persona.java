@@ -6,7 +6,7 @@ public class Persona {
     private String altura;
     private String estado_civil;
 
-    public Persona(int edad, String s, String nombre, String nacionalidad, String genero, String altura) {
+    public Persona(int edad, String nombre, String nacionalidad, String genero, String altura,String estado_civil) {
         this.nombre = nombre;
         this.edad = edad;
         this.nacionalidad = nacionalidad;
@@ -68,7 +68,11 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Nombre: " + nombre + ", Edad: " + edad + ", Nacionalidad: " + nacionalidad + ", Género: " + genero +
-                ", Altura: " + altura + ", Estado Civil: " + estado_civil;
+        return "Nombre: " + nombre + "\n" +
+                "Edad: " + edad + "\n" +
+                "Nacionalidad: " + nacionalidad + "\n" +
+                "Género: " + genero + "\n" +
+                "Altura: " + altura + "\n" +
+                "Estado Civil: " + estado_civil;
     }
 }

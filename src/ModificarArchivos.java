@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.io.*;
 import java.util.List;
 public class ModificarArchivos {
@@ -23,10 +22,10 @@ public class ModificarArchivos {
             File archivo = new File(nombrea);
 
             try {
-                PrintWriter salida = new PrintWriter(new FileWriter(archivo, true));
+                PrintWriter salida = new PrintWriter(new FileWriter(archivo));
                 for (int j = 0; j < contenido.size(); j++) {
                     String linea = contenido.get(j);
-                    salida.println(linea); // Cambiar a println para agregar saltos de línea
+                    salida.println(linea);
                 }
                 salida.close();
 
