@@ -4,10 +4,11 @@ public class Heroe extends Personaje {
     private String equipo;
     private int nivelBondad;
 
-    public Heroe(int edad, String nombre, String nacionalidad, String genero, String altura, String estadoCivil, String alias, String equipo, int nivelBondad) {
-        super(nombre, alias, new ArrayList<>(), new ArrayList<>(), new ArrayList<>());  // Llamada al constructor de Personaje
+    public Heroe(String nombre, String alias_personaje, ArrayList<String> poderes, ArrayList<String> debilidades, ArrayList<String> dichos, String nombre_personaje, String equipo) {
+        super(nombre, alias_personaje, poderes, debilidades, dichos, nombre_personaje);
         this.equipo = equipo;
-        this.nivelBondad = nivelBondad;
+        this.nivelBondad=nivelBondad;
+
     }
 
     public String getEquipo() {
@@ -24,5 +25,11 @@ public class Heroe extends Personaje {
 
     public void setNivelBondad(int nivelBondad) {
         this.nivelBondad = nivelBondad;
+    }
+    @Override
+    public String toString() {
+        return "Heroe" + "\n" +
+                "equipo='" + equipo + "\n" +
+                "nivelBondad=" + nivelBondad + "\n" ;
     }
 }
