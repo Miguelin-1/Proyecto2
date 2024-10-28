@@ -18,6 +18,7 @@ public class heroes_y_antiheroes {
     private JButton GUARDARANTIHEROEButton;
     private JButton EXPORTARATXTButton;
     private JTextField textField1;
+    private JTextField textField3;
 
 
     private void createUIComponents() {
