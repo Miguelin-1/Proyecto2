@@ -25,4 +25,12 @@ public class Heroe extends Personaje {
     public void setNivelBondad(int nivelBondad) {
         this.nivelBondad = nivelBondad;
     }
+
+    @Override
+    public String toString() {
+        return "Heroe{" + "\n" +
+                "equipo='" + equipo + '\'' + "\n" +
+                "nivelBondad=" + nivelBondad + "\n" +
+                '}';
+    }
 }

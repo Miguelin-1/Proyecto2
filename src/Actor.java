@@ -32,7 +32,11 @@ public class Actor extends Persona {
 
     @Override
     public String toString() {
-        return super.toString() + ", Alias: " + alias + ", Años de Carrera: " + anosCarrera +
-                ", Papeles: " + papeles + ", Premios: " + premios;
+        return super.toString() + "\n" + // Llamada a toString() de la clase padre
+                "Alias: " + alias + "\n" +
+                "Años de Carrera: " + anosCarrera + "\n" +
+                "Papeles: " + papeles + "\n" +
+                "Premios: " + premios;
     }
+
 }

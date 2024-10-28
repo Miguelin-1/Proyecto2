@@ -53,7 +53,10 @@ public class Personaje extends Actor{
 
     @Override
     public String toString() {
-        return "Nombre: " + nombre_personaje + " (" + alias_personaje + "), Poderes: " + poderes +
-                ", Debilidades: " + debilidades + ", Dichos: " + dichos;
+        return "Nombre: " + nombre_personaje + "\n" +
+                "Alias: " + alias_personaje + "\n" +
+                "Poderes: " + poderes + "\n" +
+                "Debilidades: " + debilidades + "\n" +
+                "Dichos: " + dichos;
     }
 }

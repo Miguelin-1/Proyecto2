@@ -25,4 +25,11 @@ public class Antiheroe extends Personaje {
     public void setNivelAmenaza(int nivelAmenaza) {
         this.nivelAmenaza = nivelAmenaza;
     }
+
+    @Override
+    public String toString() {
+        return "Antiheroe{" + "\n" +
+                "motivacion='" + motivacion + '\'' + "\n" +
+                "nivelAmenaza=" + nivelAmenaza + "\n" ;
+    }
 }
