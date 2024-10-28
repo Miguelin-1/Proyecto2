@@ -7,8 +7,8 @@ public class Personaje extends Persona {
     private ArrayList<String> debilidades = new ArrayList<>();
     private ArrayList<String> dichos = new ArrayList<>();
 
-    public Personaje(int edad, String nombre, String nacionalidad, String genero, String altura, ArrayList<String> papeles,ArrayList<String> premios,String nombre_personaje,String alias_personaje, ArrayList<String> poderes,ArrayList<String> debilidades,ArrayList<String> dichos) {
-        super(edad, nombre, nacionalidad, genero, altura);
+    public Personaje(int edad, String nombre, String nacionalidad, String genero, String altura,String estado_civil, ArrayList<String> papeles,ArrayList<String> premios,String nombre_personaje,String alias_personaje, ArrayList<String> poderes,ArrayList<String> debilidades,ArrayList<String> dichos) {
+        super(edad, nombre, nacionalidad, genero, altura,estado_civil);
         this.alias_personaje = alias_personaje;
         this.poderes = poderes;
         this.debilidades = debilidades;

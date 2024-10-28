@@ -6,7 +6,7 @@ public class Persona {
     private String altura;
     private String estado_civil;
 
-    public Persona(int edad, String nombre, String nacionalidad, String genero, String altura) {
+    public Persona(int edad, String nombre, String nacionalidad, String genero, String altura,String estado_civil) {
         this.nombre = nombre;
         this.edad = edad;
         this.nacionalidad = nacionalidad;

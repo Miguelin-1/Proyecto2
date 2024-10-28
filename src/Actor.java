@@ -6,8 +6,8 @@ public class Actor extends Persona {
     private ArrayList<String> papeles = new ArrayList<>();
     private ArrayList<String> premios = new ArrayList<>();
 
-    public Actor(int edad, String nombre, String nacionalidad, String genero, String altura,String alias, int anosCarrera, ArrayList<String> premios,ArrayList<String> papeles) {
-        super(edad, nombre, nacionalidad, genero, altura);
+    public Actor(int edad, String nombre, String nacionalidad, String genero, String altura,String estado_civil,String alias, int anosCarrera, ArrayList<String> premios,ArrayList<String> papeles) {
+        super(edad, nombre, nacionalidad, genero, altura,estado_civil);
         this.alias=alias;
         this.anosCarrera=anosCarrera;
         this.papeles=papeles;
