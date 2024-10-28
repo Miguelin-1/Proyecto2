@@ -4,8 +4,8 @@ public class Antiheroe extends Personaje {
     private String motivacion;
     private int nivelAmenaza;
 
-    public Antiheroe(int edad, String nombre, String nacionalidad, String genero, String altura, String estado_civil, ArrayList<String> premios, ArrayList<String> papeles, int anosCarrera, String alias, String nombre_personaje, String motivacion) {
-        super(edad, nombre, nacionalidad, genero, altura, estado_civil, premios, papeles, anosCarrera, alias, nombre_personaje);
+    public Antiheroe(int edad, String nombre, String nacionalidad, String genero, String altura, String estadoCivil, String alias, String motivacion, int nivelAmenaza) {
+        super(nombre, alias, new ArrayList<>(), new ArrayList<>(), new ArrayList<>()); // Llamada al constructor de Personaje
         this.motivacion = motivacion;
         this.nivelAmenaza = nivelAmenaza;
     }
@@ -24,12 +24,5 @@ public class Antiheroe extends Personaje {
 
     public void setNivelAmenaza(int nivelAmenaza) {
         this.nivelAmenaza = nivelAmenaza;
-    }
-
-    @Override
-    public String toString() {
-        return "Antiheroe{" + "\n" +
-                "motivacion='" + motivacion + '\'' + "\n" +
-                "nivelAmenaza=" + nivelAmenaza + "\n" ;
     }
 }
