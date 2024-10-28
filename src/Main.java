@@ -4,7 +4,7 @@ public class Main {
         //ModificarArchivos.crearArchivos();
         Ventana v1= new Ventana();
         v1.setVisible(true);
-        Persona persona=new Persona(18,"Juan","Colombiano","Hombre","1,85","Soltero");
+        Persona persona=new Persona(18,);
         System.out.println(persona.toString());
     }
 
