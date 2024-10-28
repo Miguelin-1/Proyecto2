@@ -1,5 +1,7 @@
 import java.io.*;
 import java.util.List;
+import java.util.Scanner;
+
 public class ModificarArchivos {
     public static void crearArchivos()
     {
@@ -9,7 +11,7 @@ public class ModificarArchivos {
             try {
                 PrintWriter salida = new PrintWriter(archivo);
                 salida.close();
-                System.out.println("Se ha creado el archivo");
+                System.out.println("Se ha creado el archivo"+ i);
             } catch (FileNotFoundException e) {
                 throw new RuntimeException(e);
             }
@@ -37,7 +39,16 @@ public class ModificarArchivos {
             }
         }
     }
-    public static void editarArchivos(String nombrea){
-           
+    public static void leerArchivos(String nombrea){
+        File file = new File ("archivo1.txt");
+           try{
+               Scanner sc =new Scanner(file);
+               while(sc.hasNextLine()){
+                   String info=sc.nextLine();
+                   System.out.println(info);
+               }
+    } catch (RuntimeException | FileNotFoundException e) {
+               throw new RuntimeException(e);
+           }
     }
 }
