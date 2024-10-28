@@ -4,7 +4,7 @@ public class Poder {
     private int nivel;
     private TipoPoder tipo;
 
-    public Poder(String nombre, String descripcion, int nivel, TipoPoder tipo) {
+    public Poder(String nombre, String descripcion, int nivel) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.nivel = nivel;

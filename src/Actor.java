@@ -1,33 +1,47 @@
 import java.util.ArrayList;
+
 public class Actor extends Persona {
     private String alias;
     private int anosCarrera;
-    private ArrayList<String> papeles;
-    private ArrayList<String> premios;
+    private ArrayList<String> papeles = new ArrayList<>();
+    private ArrayList<String> premios = new ArrayList<>();
 
-    public Actor(int edad, String nombre, String nacionalidad, String genero, String altura, String estado_civil, ArrayList<String> premios,ArrayList<String> papeles, int anosCarrera, String alias) {
-        super(edad, nombre, nacionalidad, genero, altura, estado_civil);
-        this.alias=alias;
-        this.anosCarrera=anosCarrera;
-        this.papeles=papeles;
-        this.premios = premios;
+    public Actor(int edad, String nombre, String nacionalidad, String genero, String altura, String estadoCivil, String alias, int anosCarrera) {
+        super(edad, nombre, nacionalidad, genero, altura, estadoCivil);
+        this.alias = alias;
+        this.anosCarrera = anosCarrera;
     }
 
     public void agregarPapel(String papel) {
         papeles.add(papel);
     }
 
-    public ArrayList<String> getPapeles() {
-        return papeles;
-    }
-
-
     public void agregarPremio(String premio) {
         premios.add(premio);
     }
 
+    public ArrayList<String> getPapeles() {
+        return papeles;
+    }
+
     public ArrayList<String> getPremios() {
         return premios;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
+    public int getAnosCarrera() {
+        return anosCarrera;
+    }
+
+    public void setAnosCarrera(int anosCarrera) {
+        this.anosCarrera = anosCarrera;
     }
 
     @Override

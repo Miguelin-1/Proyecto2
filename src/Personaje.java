@@ -1,59 +1,31 @@
 import java.util.ArrayList;
-public class Personaje extends Actor{
-    private String nombre_personaje;
-    private String alias_personaje;
-    private ArrayList<String> poderes;
-    private ArrayList<String> debilidades;
-    private ArrayList<String> dichos;
 
+public class Personaje extends Persona {
+    private String alias;
+    private ArrayList<String> poderes = new ArrayList<>();
+    private ArrayList<String> debilidades = new ArrayList<>();
+    private ArrayList<String> dichos = new ArrayList<>();
 
-    public Personaje(int edad, String nombre, String nacionalidad, String genero, String altura, String estado_civil, ArrayList<String> premios, ArrayList<String> papeles, int anosCarrera, String alias, String nombre_personaje) {
-        super(edad, nombre, nacionalidad, genero, altura, estado_civil, premios, papeles, anosCarrera, alias);
-        this.nombre_personaje = nombre_personaje;
-        this.alias_personaje = alias_personaje;
+    public Personaje(String nombre, String alias, ArrayList<String> poderes, ArrayList<String> debilidades, ArrayList<String> dichos) {
+        super(30, nombre, nombre, "USA", "Masculino", "1.80");
+        this.alias = alias;
         this.poderes = poderes;
         this.debilidades = debilidades;
         this.dichos = dichos;
     }
 
-    // Métodos para gestionar poderes
-    public void agregarPoder(String poder) {
-        poderes.add(poder);
+    // Otros métodos...
+
+    public String getAlias() {
+        return alias;
     }
 
-    public void eliminarPoder(String poder) {
-        poderes.remove(poder);
-    }
-
-    public ArrayList<String> getPoderes() {
-        return poderes;
-    }
-
-    // Métodos para gestionar debilidades
-    public void agregarDebilidad(String debilidad) {
-        debilidades.add(debilidad);
-    }
-
-    public void eliminarDebilidad(String debilidad) {
-        debilidades.remove(debilidad);
-    }
-
-    public ArrayList<String> getDebilidades() {
-        return debilidades;
-    }
-
-    // Métodos para gestionar dichos
-    public void agregarDicho(String dicho) {
-        dichos.add(dicho);
-    }
-
-    public ArrayList<String> getDichos() {
-        return dichos;
+    public void setAlias(String alias) {
+        this.alias = alias;
     }
 
     @Override
     public String toString() {
-        return "Nombre: " + nombre_personaje + " (" + alias_personaje + "), Poderes: " + poderes +
-                ", Debilidades: " + debilidades + ", Dichos: " + dichos;
+        return super.toString() + ", Alias: " + alias + ", Poderes: " + poderes + ", Debilidades: " + debilidades;
     }
 }
