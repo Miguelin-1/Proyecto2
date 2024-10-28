@@ -37,7 +37,7 @@ public class ModificarArchivos {
             }
         }
     }
-    public static void leerArchivos(String nombrea){
-
+    public static void editarArchivos(String nombrea){
+           
     }
 }
