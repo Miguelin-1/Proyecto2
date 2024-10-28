@@ -171,7 +171,7 @@
           <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="PODER HEROE: "/>
+          <text value="PODERES: "/>
         </properties>
       </component>
       <component id="f28d8" class="javax.swing.JLabel">
@@ -179,7 +179,7 @@
           <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value="GÉNERO"/>
         </properties>
       </component>
       <component id="835be" class="javax.swing.JLabel">
@@ -187,7 +187,7 @@
           <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value="ALTURA"/>
         </properties>
       </component>
       <component id="80a4b" class="javax.swing.JLabel">
@@ -195,7 +195,7 @@
           <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value="ESTADO CIVIL"/>
         </properties>
       </component>
       <component id="6e491" class="javax.swing.JLabel">
@@ -203,7 +203,7 @@
           <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value="PAPELES"/>
         </properties>
       </component>
       <component id="6404" class="javax.swing.JLabel">
@@ -211,7 +211,7 @@
           <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value="PREMIOS"/>
         </properties>
       </component>
       <component id="8041a" class="javax.swing.JButton" binding="GUARDARANTIHEROEButton" default-binding="true">
