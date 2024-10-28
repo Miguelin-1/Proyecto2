@@ -5,7 +5,7 @@ private int anoInicio;
 private int anoFin;
 private ArrayList<String> peliculas = new ArrayList<>();
 
-    public Papel(int edad, String nombre, String nacionalidad, String genero, String altura, String estado_civil, String alias, int anosCarrera, ArrayList<String> premios, ArrayList<String> papeles, int anoInicio) {
+    public Papel(int edad, String nombre, String nacionalidad, String genero, String altura, String estado_civil, String alias, int anosCarrera, ArrayList<String> premios, ArrayList<String> papeles, int anoInicio, int anoFin,ArrayList<String> peliculas) {
         super(edad, nombre, nacionalidad, genero, altura, estado_civil, alias, anosCarrera, premios, papeles);
         this.anoInicio = anoInicio;
         this.anoFin=anoFin;
@@ -38,10 +38,10 @@ private ArrayList<String> peliculas = new ArrayList<>();
 
     @Override
     public String toString() {
-        return "Papel{" +
-                "anoInicio=" + anoInicio +
-                ", anoFin=" + anoFin +
-                ", peliculas=" + peliculas +
-                '}';
+        return "Papel:\n" +
+                " - Año de Inicio: " + anoInicio + "\n" +
+                " - Año de Fin: " + anoFin + "\n" +
+                " - Películas: " + peliculas + "\n";
     }
+
 }
