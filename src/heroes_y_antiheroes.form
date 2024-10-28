@@ -24,6 +24,7 @@
           <component id="bb08a" class="javax.swing.JButton" binding="GUARDARHEROEButton" default-binding="true">
             <constraints border-constraint="South"/>
             <properties>
+              <hideActionText value="false"/>
               <text value="GUARDAR HEROE"/>
             </properties>
           </component>
@@ -179,7 +180,7 @@
           <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="GÉNERO"/>
+          <text value="GÉNERO:"/>
         </properties>
       </component>
       <component id="835be" class="javax.swing.JLabel">
@@ -187,7 +188,7 @@
           <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="ALTURA"/>
+          <text value="ALTURA:"/>
         </properties>
       </component>
       <component id="80a4b" class="javax.swing.JLabel">
@@ -195,7 +196,7 @@
           <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="ESTADO CIVIL"/>
+          <text value="ESTADO CIVIL:"/>
         </properties>
       </component>
       <component id="6e491" class="javax.swing.JLabel">
@@ -203,7 +204,7 @@
           <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="PAPELES"/>
+          <text value="PAPELES:"/>
         </properties>
       </component>
       <component id="6404" class="javax.swing.JLabel">
@@ -211,7 +212,7 @@
           <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="PREMIOS"/>
+          <text value="PREMIOS:"/>
         </properties>
       </component>
       <component id="8041a" class="javax.swing.JButton" binding="GUARDARANTIHEROEButton" default-binding="true">
@@ -272,6 +273,30 @@
         </constraints>
         <properties>
           <text value="ALIAS:"/>
+        </properties>
+      </component>
+      <component id="c4613" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="ALIAS PERSONAJE:"/>
+        </properties>
+      </component>
+      <component id="5e61" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="AÑOS DE CARRERA:"/>
+        </properties>
+      </component>
+      <component id="fc28" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="DICHOS DEL PERSONAJE:"/>
         </properties>
       </component>
     </children>

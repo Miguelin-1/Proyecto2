@@ -19,6 +19,7 @@ public class heroes_y_antiheroes {
     private JButton EXPORTARATXTButton;
     private JTextField textField1;
 
+
     private void createUIComponents() {
         // TODO: place custom component creation code here
     }
