@@ -77,6 +77,8 @@ public class Ventana extends JFrame {
             nombre.setBounds(10, 70, 140, 10);
             nombre.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(nombre);
+            JTextField cajadetexto=new JTextField();
+
             JLabel edad = new JLabel("EDAD:");
             edad.setBounds(10, 90, 140, 10);
             edad.setFont(new Font("Times New Roman", Font.BOLD, 12));
