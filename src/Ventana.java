@@ -572,11 +572,17 @@ public class Ventana extends JFrame {
             nivelAmenaza.setBounds(10, 400, 140, 10);
             nivelAmenaza.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(nivelAmenaza);
+            JTextField textoNivelAmenaza=new JTextField();
+            textoNivelAmenaza.setBounds(200,400,140,15);
+            panelAntiheroes.add(textoNivelAmenaza);
 
             JLabel motivacion = new JLabel("MOTIVACIÓN:");
             motivacion.setBounds(10, 420, 140, 10);
             motivacion.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(motivacion);
+            JTextField textoMotivacion=new JTextField();
+            textoMotivacion.setBounds(200,420,140,15);
+            panelAntiheroes.add(textoMotivacion);
 
             JButton botonVolver = new JButton("Volver");
             botonVolver.setBounds(200, 450, 100, 30);
