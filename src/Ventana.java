@@ -339,6 +339,10 @@ public class Ventana extends JFrame {
             papeles.setBounds(10, 265, 140, 10);
             papeles.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(papeles);
+            JTextField textoPapeles=new JTextField();
+            textoPapeles.setBounds(200,265,140,15);
+            panelVillanos.add(textoPapeles);
+
 
             JLabel datosPersonaje = new JLabel("DATOS DEL PERSONAJE");
             datosPersonaje.setBounds(10, 280, 300, 15);
