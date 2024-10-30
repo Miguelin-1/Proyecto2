@@ -322,6 +322,9 @@ public class Ventana extends JFrame {
             anosCarrera.setBounds(10, 225, 140, 10);
             anosCarrera.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(anosCarrera);
+            JTextField textoAnosCarrera=new JTextField();
+            textoAnosCarrera.setBounds(200,225,140,15);
+            panelVillanos.add(textoAnosCarrera);
 
             JLabel premios = new JLabel("PREMIOS:");
             premios.setBounds(10, 245, 140, 10);
