@@ -18,25 +18,34 @@ public class ModificarArchivos {
         }
     }
 
-    public static void escribirArchivos(List<String> contenido) {
-        for (int i = 1; i <= 10; i++) {
-            String nombrea = "archivo" + i + ".txt";
-            File archivo = new File(nombrea);
+    public void escribirArchivos(String nombreArchivo, Heroe heroe) {
+        String contenido = "Este es el heroe que acabas de crear: \n"+
+                "Nombre: " + heroe.getNombre() + "\n" +
+                "Edad: " + heroe.getEdad() + "\n" +
+                "Nacionalidad: " + heroe.getNacionalidad() + "\n" +
+                "Género: " + heroe.getGenero() + "\n" +
+                "Altura: " + heroe.getAltura() + "\n" +
+                "Estado Civil: " + heroe.getEstadoCivil() + "\n" +
+                "Alias: " + heroe.getAlias() + "\n" +
+                "Años de experiencia: " + heroe.getAnosCarrera() + "\n" +
+                "Premios: " + heroe.getPremios() + "\n" +
+                "Papeles: " + heroe.getPapeles() + "\n" +
+                "Fecha de inicio de la pelicula: " + heroe.getAnoInicio() + "\n" +
+                "Fecha del fin de la pelicula: " + heroe.getAnoFin() + "\n" +
+                "Peliculas: " + heroe.getPeliculas() + "\n" +
+                "Nombre de personaje: " + heroe.getNombre_personaje() + "\n" +
+                "Alias del personaje: " + heroe.getAlias_personaje() + "\n" +
+                "Poderes: " + heroe.getPoderes() + "\n" +
+                "Debilidades: " + heroe.getDebilidades() + "\n" +
+                "Dichos: " + heroe.getDichos() + "\n" +
+                "Equipo: " + heroe.getEquipo() + "\n" +
+                "Nivel de bondad: " + heroe.getNivelBondad() + "\n" +
+                "---------------------------\n";
 
-            try {
-                PrintWriter salida = new PrintWriter(new FileWriter(archivo));
-                for (int j = 0; j < contenido.size(); j++) {
-                    String linea = contenido.get(j);
-                    salida.println(linea);
-                }
-                salida.close();
-
-                System.out.println("Se ha escrito en el archivo " + nombrea);
-            } catch (FileNotFoundException e) {
-                throw new RuntimeException(e);
-            } catch (IOException e) {
-                e.printStackTrace(System.out);
-            }
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo))) {
+            writer.write(contenido);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
     public static void leerArchivos(String nombrea){

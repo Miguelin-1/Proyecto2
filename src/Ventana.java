@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Ventana extends JFrame {
 
@@ -10,10 +13,13 @@ public class Ventana extends JFrame {
     private JPanel panelAntiheroes;
     private JPanel panelVillanos;
     private int contarArchivos=1;
+    private List<Heroe> listaHeroes = new ArrayList<>();
+    private ModificarArchivos modifcarArchivos = new ModificarArchivos();
+
     private JTextField textoNom,textoEdad,textoNacion,textoGen,textoAlt,textoEstado,textoAliasActor,textoCarrera,textoPremios,textoPapeles,textoNombrep,textoAliasp,textoPoderes,textoDebilidades,textoDichos,textoEquipo,textoNivelBondad,textoAnoinicio,textoAnofin,textoPeliculas;
 
     public Ventana() {
-        setSize(500, 550);
+        setSize(500, 600);
         setLocationRelativeTo(null); // Pone la ventana en el centro de la pantalla
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Creación de héroes y antihéroes");
@@ -166,20 +172,20 @@ public class Ventana extends JFrame {
             datosPapel.setFont(new Font("Times New Roman", Font.BOLD, 18));
             panelHeroes.add(datosPapel);
 
-            JLabel anoInicio = new JLabel("AÑO INICIO:");
+            JLabel anoInicio = new JLabel("FECHA INICIO:");
             anoInicio.setBounds(10, 305, 140, 10);
             anoInicio.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(anoInicio);
             JTextField textoAnoInicio = new JTextField();
-            textoAnoInicio.setBounds(70, 305, 140, 15);
+            textoAnoInicio.setBounds(95, 305, 140, 15);
             panelHeroes.add(textoAnoInicio);
 
-            JLabel anoFin = new JLabel("AÑO FINAL:");
+            JLabel anoFin = new JLabel("FECHA FINAL:");
             anoFin.setBounds(10, 325, 140, 10);
             anoFin.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(anoFin);
             JTextField textoAnoFin = new JTextField();
-            textoAnoFin.setBounds(55, 325, 140, 15);
+            textoAnoFin.setBounds(95, 325, 140, 15);
             panelHeroes.add(textoAnoFin);
 
             JLabel peliculas = new JLabel("PELICULAS:");
@@ -187,7 +193,7 @@ public class Ventana extends JFrame {
             peliculas.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(peliculas);
             JTextField textoPeliculas = new JTextField();
-            textoPeliculas.setBounds(70, 345, 140, 15);
+            textoPeliculas.setBounds(80, 345, 140, 15);
             panelHeroes.add(textoPeliculas);
 
             JLabel datosPersonaje = new JLabel("DATOS PERSONAJE");
@@ -248,6 +254,8 @@ public class Ventana extends JFrame {
             nivelBondad.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(nivelBondad);
             JTextField textoNivelBondad = new JTextField();
+            textoNivelBondad.setBounds(125,505,140,15);
+            panelHeroes.add(textoNivelBondad);
 
 
             JButton botonVolver = new JButton("Volver");
@@ -271,7 +279,16 @@ public class Ventana extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(contarArchivos<=10){
-                   // Heroe heroe=new Heroe(Integer.parseInt(textoEdad.getText()),textoNom.getText(),textoNacion.getText(),textoGen.getText(),textoAlt.getText(),textoEstado.getText(),textoAliasActor.getText(),Integer.parseInt(textoCarrera.getText()),textoPremios.getText(),textoPapeles.getText(),Integer.parseInt(textoCarrera.getText()));
+                    ArrayList<String>premiosList=new ArrayList<>(Arrays.asList(textoPremios.getText().split(",")));
+                    ArrayList<String>papelesList=new ArrayList<>(Arrays.asList(textoPapeles.getText().split(",")));
+                    ArrayList<String>peliculasList=new ArrayList<>(Arrays.asList(textoPeliculas.getText().split(",")));
+                    ArrayList<String>poderesList=new ArrayList<>(Arrays.asList(textoPoderes.getText().split(",")));
+                    ArrayList<String>debilidadesList=new ArrayList<>(Arrays.asList(textoDebilidades.getText().split(",")));
+                    ArrayList<String>dichosList=new ArrayList<>(Arrays.asList(textoDichos.getText().split(",")));
+
+                    Heroe heroe=new Heroe(Integer.parseInt(textoEdad.getText()),textoNom.getText(),textoNacion.getText(),textoGen.getText(),textoAlt.getText(),textoEstado.getText(),textoAliasActor.getText(),Integer.parseInt(textoCarrera.getText()),premiosList,papelesList,Integer.parseInt(textoAnoinicio.getText()),Integer.parseInt(textoAnofin.getText()),peliculasList,textoNombrep.getText(),textoAliasp.getText(),poderesList,debilidadesList,dichosList,textoEquipo.getText(),Integer.parseInt(textoNivelBondad.getText()));
+                    listaHeroes.add(heroe);
+
 
                 }
             }

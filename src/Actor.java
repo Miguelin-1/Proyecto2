@@ -14,9 +14,11 @@ public class Actor extends Persona {
         this.premios = premios;
     }
 
+
     public void agregarPapel(String papel) {
         papeles.add(papel);
     }
+
 
     public ArrayList<String> getPapeles() {
         return papeles;
@@ -25,6 +27,14 @@ public class Actor extends Persona {
 
     public void agregarPremio(String premio) {
         premios.add(premio);
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public int getAnosCarrera() {
+        return anosCarrera;
     }
 
     public ArrayList<String> getPremios() {

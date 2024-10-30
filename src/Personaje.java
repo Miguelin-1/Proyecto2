@@ -16,6 +16,18 @@ public class Personaje extends Papel {
         this.dichos = dichos;
     }
 
+    public ArrayList<String> getPoderes() {
+        return poderes;
+    }
+
+    public ArrayList<String> getDebilidades() {
+        return debilidades;
+    }
+
+    public ArrayList<String> getDichos() {
+        return dichos;
+    }
+
     public String getNombre_personaje() {
         return nombre_personaje;
     }
@@ -25,7 +37,7 @@ public class Personaje extends Papel {
     }
     // Otros métodos...
 
-    public String getAlias() {
+    public String getAlias_personaje() {
         return alias_personaje;
     }
 
