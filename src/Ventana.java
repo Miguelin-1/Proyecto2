@@ -280,6 +280,10 @@ public class Ventana extends JFrame {
             genero.setBounds(10, 130, 140, 10);
             genero.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(genero);
+            JTextField textoGenero=new JTextField();
+            textoGenero.setBounds(200,130,140,15);
+            panelVillanos.add(textoGenero);
+
 
             JLabel altura = new JLabel("ALTURA:");
             altura.setBounds(10, 150, 140, 10);
