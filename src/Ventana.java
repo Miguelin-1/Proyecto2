@@ -361,6 +361,9 @@ public class Ventana extends JFrame {
             aliasp.setBounds(10, 320, 140, 10);
             aliasp.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(aliasp);
+            JTextField textoAliasp=new JTextField();
+            textoAliasp.setBounds(200,320,140,15);
+            panelVillanos.add(textoAliasp);
 
             JLabel poderes = new JLabel("PODERES:");
             poderes.setBounds(10, 340, 140, 10);
