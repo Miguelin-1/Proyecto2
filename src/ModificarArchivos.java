@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ModificarArchivos {
+
     public static void crearArchivos()
     {
         for(int i=1;i<=10;i++) {
@@ -18,7 +19,7 @@ public class ModificarArchivos {
         }
     }
 
-    public void escribirArchivos(String nombreArchivo, Heroe heroe) {
+    public static void escribirArchivos(int numeroArchivo, Heroe heroe) {
         String contenido = "Este es el heroe que acabas de crear: \n"+
                 "Nombre: " + heroe.getNombre() + "\n" +
                 "Edad: " + heroe.getEdad() + "\n" +

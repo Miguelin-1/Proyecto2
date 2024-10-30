@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Ventana extends JFrame {
 
@@ -16,7 +19,7 @@ public class Ventana extends JFrame {
     private JTextField textoNom,textoEdad,textoNacion,textoGen,textoAlt,textoEstado,textoAliasActor,textoCarrera,textoPremios,textoPapeles,textoNombrep,textoAliasp,textoPoderes,textoDebilidades,textoDichos,textoEquipo,textoNivelBondad,textoAnoinicio,textoAnofin,textoPeliculas;
 
     public Ventana() {
-        setSize(500, 600);
+        setSize(500, 550);
         setLocationRelativeTo(null); // Pone la ventana en el centro de la pantalla
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Creación de héroes y antihéroes");
@@ -39,7 +42,7 @@ public class Ventana extends JFrame {
         panelPrincipal.add(etiqueta1);
 
         JButton botonH = new JButton("Crear Héroe");
-        botonH.setBounds(25, 450, 125, 50);
+        botonH.setBounds(25, 350, 125, 50);
         botonH.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 mostrarPanelHeroes();
@@ -48,7 +51,7 @@ public class Ventana extends JFrame {
         panelPrincipal.add(botonH);
 
         JButton botonAH = new JButton("Crear AntiHéroe");
-        botonAH.setBounds(175, 450, 125, 50);
+        botonAH.setBounds(175, 350, 125, 50);
         panelPrincipal.add(botonAH);
         botonAH.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -57,7 +60,7 @@ public class Ventana extends JFrame {
         });
 
         JButton botonV = new JButton("Crear Villano");
-        botonV.setBounds(325, 450, 125, 50);
+        botonV.setBounds(325, 350, 125, 50);
         panelPrincipal.add(botonV);
         botonV.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -78,189 +81,185 @@ public class Ventana extends JFrame {
             datos.setBounds(10, 50, 300, 15);
             datos.setFont(new Font("Times New Roman", Font.BOLD, 18));
             panelHeroes.add(datos);
+
             JLabel nombre = new JLabel("NOMBRE:");
-            nombre.setBounds(10, 70, 140, 10);
+            nombre.setBounds(10, 80, 140, 15);
             nombre.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(nombre);
-            JTextField textoNom=new JTextField();
-            textoNom.setBounds(200,70,140,15);
+            JTextField textoNom = new JTextField();
+            textoNom.setBounds(200, 80, 140, 15);
             panelHeroes.add(textoNom);
 
             JLabel edad = new JLabel("EDAD:");
-            edad.setBounds(10, 90, 140, 10);
+            edad.setBounds(10, 95, 140, 15);
             edad.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(edad);
-
-            JTextField textoEdad=new JTextField();
-            textoEdad.setBounds(200,90,140,15);
+            JTextField textoEdad = new JTextField();
+            textoEdad.setBounds(200, 95, 140, 15);
             panelHeroes.add(textoEdad);
 
-            JLabel nacionalidad = new JLabel("NACIONALIDAD :");
-            nacionalidad.setBounds(10, 110, 140, 10);
+            JLabel nacionalidad = new JLabel("NACIONALIDAD:");
+            nacionalidad.setBounds(10, 110, 140, 15);
             nacionalidad.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(nacionalidad);
-
-            JTextField textoNacion=new JTextField();
-            textoNacion.setBounds(200,110,140,15);
+            JTextField textoNacion = new JTextField();
+            textoNacion.setBounds(200, 110, 140, 15);
             panelHeroes.add(textoNacion);
 
             JLabel genero = new JLabel("GÉNERO:");
-            genero.setBounds(10, 130, 140, 10);
+            genero.setBounds(10, 125, 140, 15);
             genero.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(genero);
-            JTextField textoGen=new JTextField();
-            textoGen.setBounds(200,130,140,15);
+            JTextField textoGen = new JTextField();
+            textoGen.setBounds(200, 125, 140, 15);
             panelHeroes.add(textoGen);
+
             JLabel altura = new JLabel("ALTURA:");
-            altura.setBounds(10, 150, 140, 10);
+            altura.setBounds(10, 140, 140, 15);
             altura.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(altura);
-            JTextField textoAlt=new JTextField();
-            textoAlt.setBounds(200,150,140,15);
+            JTextField textoAlt = new JTextField();
+            textoAlt.setBounds(200, 140, 140, 15);
             panelHeroes.add(textoAlt);
 
             JLabel estadoCivil = new JLabel("ESTADO CIVIL:");
-            estadoCivil.setBounds(10, 170, 140, 10);
+            estadoCivil.setBounds(10, 155, 140, 15);
             estadoCivil.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(estadoCivil);
-            JTextField textoEstado=new JTextField();
-            textoEstado.setBounds(200,170,140,15);
+            JTextField textoEstado = new JTextField();
+            textoEstado.setBounds(200, 155, 140, 15);
             panelHeroes.add(textoEstado);
 
             JLabel datosProfesionales = new JLabel("DATOS PROFESIONALES");
-            datosProfesionales.setBounds(10, 185, 300, 15);
+            datosProfesionales.setBounds(10, 170, 300, 15);
             datosProfesionales.setFont(new Font("Times New Roman", Font.BOLD, 18));
             panelHeroes.add(datosProfesionales);
 
             JLabel alias = new JLabel("ALIAS:");
-            alias.setBounds(10, 205, 140, 10);
+            alias.setBounds(10, 185, 140, 15);
             alias.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(alias);
-            JTextField textoAliasActor=new JTextField();
-            textoAliasActor.setBounds(200,205,140,15);
+            JTextField textoAliasActor = new JTextField();
+            textoAliasActor.setBounds(200, 185, 140, 15);
             panelHeroes.add(textoAliasActor);
 
             JLabel anosCarrera = new JLabel("TIEMPO DE EXPERIENCIA:");
-            anosCarrera.setBounds(10, 225, 140, 10);
+            anosCarrera.setBounds(10, 200, 140, 15);
             anosCarrera.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(anosCarrera);
-            JTextField textoCarrera=new JTextField();
-            textoCarrera.setBounds(200,225,140,15);
+            JTextField textoCarrera = new JTextField();
+            textoCarrera.setBounds(200, 200, 140, 15);
             panelHeroes.add(textoCarrera);
 
             JLabel premios = new JLabel("PREMIOS:");
-            premios.setBounds(10, 245, 140, 10);
+            premios.setBounds(10, 215, 140, 15);
             premios.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(premios);
-            JTextField textoPremios=new JTextField();
-            textoPremios.setBounds(200,245,140,15);
+            JTextField textoPremios = new JTextField();
+            textoPremios.setBounds(200, 215, 140, 15);
             panelHeroes.add(textoPremios);
 
             JLabel papeles = new JLabel("PAPELES:");
-            papeles.setBounds(10, 265, 140, 10);
+            papeles.setBounds(10, 230, 140, 15);
             papeles.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(papeles);
-            JTextField textoPapeles=new JTextField();
-            textoPapeles.setBounds(200,265,140,15);
+            JTextField textoPapeles = new JTextField();
+            textoPapeles.setBounds(200, 230, 140, 15);
             panelHeroes.add(textoPapeles);
 
             JLabel datosPapel = new JLabel("DATOS DEL PAPEL");
-            datosPapel.setBounds(10, 285, 300, 15);
+            datosPapel.setBounds(10, 245, 300, 15);
             datosPapel.setFont(new Font("Times New Roman", Font.BOLD, 18));
             panelHeroes.add(datosPapel);
 
             JLabel anoInicio = new JLabel("FECHA INICIO:");
-            anoInicio.setBounds(10, 305, 140, 10);
+            anoInicio.setBounds(10, 260, 140, 15);
             anoInicio.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(anoInicio);
             JTextField textoAnoInicio = new JTextField();
-            textoAnoInicio.setBounds(95, 305, 140, 15);
+            textoAnoInicio.setBounds(200, 260, 140, 15);
             panelHeroes.add(textoAnoInicio);
 
             JLabel anoFin = new JLabel("FECHA FINAL:");
-            anoFin.setBounds(10, 325, 140, 10);
+            anoFin.setBounds(10, 275, 140, 15);
             anoFin.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(anoFin);
             JTextField textoAnoFin = new JTextField();
-            textoAnoFin.setBounds(95, 325, 140, 15);
+            textoAnoFin.setBounds(200, 275, 140, 15);
             panelHeroes.add(textoAnoFin);
 
             JLabel peliculas = new JLabel("PELICULAS:");
-            peliculas.setBounds(10, 345, 140, 10);
+            peliculas.setBounds(10, 290, 140, 15);
             peliculas.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(peliculas);
             JTextField textoPeliculas = new JTextField();
-            textoPeliculas.setBounds(80, 345, 140, 15);
+            textoPeliculas.setBounds(200, 290, 140, 15);
             panelHeroes.add(textoPeliculas);
 
             JLabel datosPersonaje = new JLabel("DATOS PERSONAJE");
-            datosPersonaje.setBounds(10, 280, 300, 15);
+            datosPersonaje.setBounds(10, 305, 300, 15);
             datosPersonaje.setFont(new Font("Times New Roman", Font.BOLD, 18));
             panelHeroes.add(datosPersonaje);
+
             JLabel nombrep = new JLabel("NOMBRE:");
-            nombrep.setBounds(10, 300, 140, 10);
+            nombrep.setBounds(10, 320, 140, 15);
             nombrep.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(nombrep);
-            JTextField textoNombrep=new JTextField();
-            textoNombrep.setBounds(200,300,140,15);
+            JTextField textoNombrep = new JTextField();
+            textoNombrep.setBounds(200, 320, 140, 15);
             panelHeroes.add(textoNombrep);
 
-
             JLabel aliasp = new JLabel("ALIAS:");
-            aliasp.setBounds(10, 320, 140, 10);
+            aliasp.setBounds(10, 335, 140, 15);
             aliasp.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(aliasp);
-            JTextField textoAliasp=new JTextField();
-            textoAliasp.setBounds(200,320,140,15);
+            JTextField textoAliasp = new JTextField();
+            textoAliasp.setBounds(200, 335, 140, 15);
             panelHeroes.add(textoAliasp);
 
-
             JLabel poderes = new JLabel("PODERES:");
-            poderes.setBounds(10, 340, 140, 10);
+            poderes.setBounds(10, 350, 140, 15);
             poderes.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(poderes);
-            JTextField textoPoderes=new JTextField();
-            textoPoderes.setBounds(200,340,140,15);
+            JTextField textoPoderes = new JTextField();
+            textoPoderes.setBounds(200, 350, 140, 15);
             panelHeroes.add(textoPoderes);
 
             JLabel debilidades = new JLabel("DEBILIDADES:");
-            debilidades.setBounds(10, 360, 140, 10);
+            debilidades.setBounds(10, 365, 140, 15);
             debilidades.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(debilidades);
-            JTextField textoDebilidades=new JTextField();
-            textoDebilidades.setBounds(200,360,140,15);
+            JTextField textoDebilidades = new JTextField();
+            textoDebilidades.setBounds(200, 365, 140, 15);
             panelHeroes.add(textoDebilidades);
 
             JLabel dichos = new JLabel("DICHOS:");
-            dichos.setBounds(10, 380, 140, 10);
+            dichos.setBounds(10, 380, 140, 15);
             dichos.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(dichos);
-            JTextField textoDichos=new JTextField();
-            textoDichos.setBounds(200,380,140,15);
+            JTextField textoDichos = new JTextField();
+            textoDichos.setBounds(200, 380, 140, 15);
             panelHeroes.add(textoDichos);
 
             JLabel equipo = new JLabel("EQUIPO:");
-            equipo.setBounds(10, 400, 140, 10);
+            equipo.setBounds(10, 395, 140, 15);
             equipo.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(equipo);
-            JTextField textoEquipo=new JTextField();
-            textoEquipo.setBounds(200,400,140,15);
+            JTextField textoEquipo = new JTextField();
+            textoEquipo.setBounds(200, 395, 140, 15);
             panelHeroes.add(textoEquipo);
 
             JLabel nivelBondad = new JLabel("NIVEL DE BONDAD:");
-            nivelBondad.setBounds(10, 420, 140, 10);
+            nivelBondad.setBounds(10, 410, 140, 15);
             nivelBondad.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(nivelBondad);
-            JTextField textoNivelBondad=new JTextField();
-            textoNivelBondad.setBounds(200,420,140,15);
-            panelHeroes.add(textoNivelBondad);
             JTextField textoNivelBondad = new JTextField();
-            textoNivelBondad.setBounds(125,505,140,15);
+            textoNivelBondad.setBounds(200, 410, 140, 15);
             panelHeroes.add(textoNivelBondad);
 
 
             JButton botonVolver = new JButton("Volver");
-            botonVolver.setBounds(200, 450, 100, 30);
+            botonVolver.setBounds(350, 200, 100, 30);
             botonVolver.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     mostrarPanelPrincipal();
@@ -275,7 +274,7 @@ public class Ventana extends JFrame {
         this.repaint();
 
         JButton botontxt=new JButton("Exportar a txt");
-        botontxt.setBounds(300,250,100,30);
+        botontxt.setBounds(350,250,100,30);
         botontxt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -289,6 +288,9 @@ public class Ventana extends JFrame {
 
                     Heroe heroe=new Heroe(Integer.parseInt(textoEdad.getText()),textoNom.getText(),textoNacion.getText(),textoGen.getText(),textoAlt.getText(),textoEstado.getText(),textoAliasActor.getText(),Integer.parseInt(textoCarrera.getText()),premiosList,papelesList,Integer.parseInt(textoAnoinicio.getText()),Integer.parseInt(textoAnofin.getText()),peliculasList,textoNombrep.getText(),textoAliasp.getText(),poderesList,debilidadesList,dichosList,textoEquipo.getText(),Integer.parseInt(textoNivelBondad.getText()));
                     listaHeroes.add(heroe);
+                    ModificarArchivos.escribirArchivos(contarArchivos,heroe);
+                    contarArchivos++;
+
 
 
                 }
@@ -310,163 +312,183 @@ public class Ventana extends JFrame {
             panelVillanos.add(datos);
 
             JLabel nombre = new JLabel("NOMBRE:");
-            nombre.setBounds(10, 70, 140, 10);
+            nombre.setBounds(10, 80, 140, 15);
             nombre.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(nombre);
-            JTextField textoNombre=new JTextField();
-            textoNombre.setBounds(200,70,140,15);
-            panelVillanos.add(textoNombre);
+            JTextField textoNom = new JTextField();
+            textoNom.setBounds(200, 80, 140, 15);
+            panelVillanos.add(textoNom);
 
             JLabel edad = new JLabel("EDAD:");
-            edad.setBounds(10, 90, 140, 10);
+            edad.setBounds(10, 95, 140, 15);
             edad.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(edad);
-            JTextField textoEdad=new JTextField();
-            textoEdad.setBounds(200,90,140,15);
+            JTextField textoEdad = new JTextField();
+            textoEdad.setBounds(200, 95, 140, 15);
             panelVillanos.add(textoEdad);
 
             JLabel nacionalidad = new JLabel("NACIONALIDAD:");
-            nacionalidad.setBounds(10, 110, 140, 10);
+            nacionalidad.setBounds(10, 110, 140, 15);
             nacionalidad.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(nacionalidad);
-            JTextField textoNacionalidad=new JTextField();
-            textoNacionalidad.setBounds(200,110,140,15);
-            panelVillanos.add(textoNacionalidad);
-
+            JTextField textoNacion = new JTextField();
+            textoNacion.setBounds(200, 110, 140, 15);
+            panelVillanos.add(textoNacion);
 
             JLabel genero = new JLabel("GÉNERO:");
-            genero.setBounds(10, 130, 140, 10);
+            genero.setBounds(10, 125, 140, 15);
             genero.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(genero);
-            JTextField textoGenero=new JTextField();
-            textoGenero.setBounds(200,130,140,15);
-            panelVillanos.add(textoGenero);
-
+            JTextField textoGen = new JTextField();
+            textoGen.setBounds(200, 125, 140, 15);
+            panelVillanos.add(textoGen);
 
             JLabel altura = new JLabel("ALTURA:");
-            altura.setBounds(10, 150, 140, 10);
+            altura.setBounds(10, 140, 140, 15);
             altura.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(altura);
-            JTextField textoAltura=new JTextField();
-            textoAltura.setBounds(200,150,140,15);
-            panelVillanos.add(textoAltura);
-
-
+            JTextField textoAlt = new JTextField();
+            textoAlt.setBounds(200, 140, 140, 15);
+            panelVillanos.add(textoAlt);
 
             JLabel estadoCivil = new JLabel("ESTADO CIVIL:");
-            estadoCivil.setBounds(10, 170, 140, 10);
+            estadoCivil.setBounds(10, 155, 140, 15);
             estadoCivil.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(estadoCivil);
-            JTextField textoEstadoCivil=new JTextField();
-            textoEstadoCivil.setBounds(200,170,140,15);
-            panelVillanos.add(textoEstadoCivil);
-
-
+            JTextField textoEstado = new JTextField();
+            textoEstado.setBounds(200, 155, 140, 15);
+            panelVillanos.add(textoEstado);
 
             JLabel datosProfesionales = new JLabel("DATOS PROFESIONALES");
-            datosProfesionales.setBounds(10, 185, 300, 15);
+            datosProfesionales.setBounds(10, 170, 300, 15);
             datosProfesionales.setFont(new Font("Times New Roman", Font.BOLD, 18));
             panelVillanos.add(datosProfesionales);
 
             JLabel alias = new JLabel("ALIAS:");
-            alias.setBounds(10, 205, 140, 10);
+            alias.setBounds(10, 185, 140, 15);
             alias.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(alias);
-            JTextField textoAlias=new JTextField();
-            textoAlias.setBounds(200,205,140,15);
-            panelVillanos.add(textoAlias);
+            JTextField textoAliasActor = new JTextField();
+            textoAliasActor.setBounds(200, 185, 140, 15);
+            panelVillanos.add(textoAliasActor);
 
-            JLabel anosCarrera = new JLabel("AÑOS DE CARRERA:");
-            anosCarrera.setBounds(10, 225, 140, 10);
+            JLabel anosCarrera = new JLabel("TIEMPO DE EXPERIENCIA:");
+            anosCarrera.setBounds(10, 200, 140, 15);
             anosCarrera.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(anosCarrera);
-            JTextField textoAnosCarrera=new JTextField();
-            textoAnosCarrera.setBounds(200,225,140,15);
-            panelVillanos.add(textoAnosCarrera);
+            JTextField textoCarrera = new JTextField();
+            textoCarrera.setBounds(200, 200, 140, 15);
+            panelVillanos.add(textoCarrera);
 
             JLabel premios = new JLabel("PREMIOS:");
-            premios.setBounds(10, 245, 140, 10);
+            premios.setBounds(10, 215, 140, 15);
             premios.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(premios);
-            JTextField textoPremios=new JTextField();
-            textoPremios.setBounds(200,245,140,15);
+            JTextField textoPremios = new JTextField();
+            textoPremios.setBounds(200, 215, 140, 15);
             panelVillanos.add(textoPremios);
 
-
             JLabel papeles = new JLabel("PAPELES:");
-            papeles.setBounds(10, 265, 140, 10);
+            papeles.setBounds(10, 230, 140, 15);
             papeles.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(papeles);
-            JTextField textoPapeles=new JTextField();
-            textoPapeles.setBounds(200,265,140,15);
+            JTextField textoPapeles = new JTextField();
+            textoPapeles.setBounds(200, 230, 140, 15);
             panelVillanos.add(textoPapeles);
 
+            JLabel datosPapel = new JLabel("DATOS DEL PAPEL");
+            datosPapel.setBounds(10, 245, 300, 15);
+            datosPapel.setFont(new Font("Times New Roman", Font.BOLD, 18));
+            panelVillanos.add(datosPapel);
 
-            JLabel datosPersonaje = new JLabel("DATOS DEL PERSONAJE");
-            datosPersonaje.setBounds(10, 280, 300, 15);
+            JLabel anoInicio = new JLabel("FECHA INICIO:");
+            anoInicio.setBounds(10, 260, 140, 15);
+            anoInicio.setFont(new Font("Times New Roman", Font.BOLD, 12));
+            panelVillanos.add(anoInicio);
+            JTextField textoAnoInicio = new JTextField();
+            textoAnoInicio.setBounds(200, 260, 140, 15);
+            panelVillanos.add(textoAnoInicio);
+
+            JLabel anoFin = new JLabel("FECHA FINAL:");
+            anoFin.setBounds(10, 275, 140, 15);
+            anoFin.setFont(new Font("Times New Roman", Font.BOLD, 12));
+            panelVillanos.add(anoFin);
+            JTextField textoAnoFin = new JTextField();
+            textoAnoFin.setBounds(200, 275, 140, 15);
+            panelVillanos.add(textoAnoFin);
+
+            JLabel peliculas = new JLabel("PELICULAS:");
+            peliculas.setBounds(10, 290, 140, 15);
+            peliculas.setFont(new Font("Times New Roman", Font.BOLD, 12));
+            panelVillanos.add(peliculas);
+            JTextField textoPeliculas = new JTextField();
+            textoPeliculas.setBounds(200, 290, 140, 15);
+            panelVillanos.add(textoPeliculas);
+
+            JLabel datosPersonaje = new JLabel("DATOS PERSONAJE");
+            datosPersonaje.setBounds(10, 305, 300, 15);
             datosPersonaje.setFont(new Font("Times New Roman", Font.BOLD, 18));
             panelVillanos.add(datosPersonaje);
 
             JLabel nombrep = new JLabel("NOMBRE:");
-            nombrep.setBounds(10, 300, 140, 10);
+            nombrep.setBounds(10, 320, 140, 15);
             nombrep.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(nombrep);
-            JTextField textoNombrep=new JTextField();
-            textoNombrep.setBounds(200,300,140,15);
+            JTextField textoNombrep = new JTextField();
+            textoNombrep.setBounds(200, 320, 140, 15);
             panelVillanos.add(textoNombrep);
 
             JLabel aliasp = new JLabel("ALIAS:");
-            aliasp.setBounds(10, 320, 140, 10);
+            aliasp.setBounds(10, 335, 140, 15);
             aliasp.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(aliasp);
-            JTextField textoAliasp=new JTextField();
-            textoAliasp.setBounds(200,320,140,15);
+            JTextField textoAliasp = new JTextField();
+            textoAliasp.setBounds(200, 335, 140, 15);
             panelVillanos.add(textoAliasp);
 
             JLabel poderes = new JLabel("PODERES:");
-            poderes.setBounds(10, 340, 140, 10);
+            poderes.setBounds(10, 350, 140, 15);
             poderes.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(poderes);
-            JTextField textoPoderes=new JTextField();
-            textoPoderes.setBounds(200,340,140,15);
+            JTextField textoPoderes = new JTextField();
+            textoPoderes.setBounds(200, 350, 140, 15);
             panelVillanos.add(textoPoderes);
 
             JLabel debilidades = new JLabel("DEBILIDADES:");
-            debilidades.setBounds(10, 360, 140, 10);
+            debilidades.setBounds(10, 365, 140, 15);
             debilidades.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(debilidades);
-            JTextField textoDebilidades=new JTextField();
-            textoDebilidades.setBounds(200,360,140,15);
+            JTextField textoDebilidades = new JTextField();
+            textoDebilidades.setBounds(200, 365, 140, 15);
             panelVillanos.add(textoDebilidades);
 
-
-            JLabel planMalevolo = new JLabel("PLAN MALÉVOLO:");
-            planMalevolo.setBounds(10, 380, 140, 10);
-            planMalevolo.setFont(new Font("Times New Roman", Font.BOLD, 12));
-            panelVillanos.add(planMalevolo);
-            JTextField textoPlanMalevolo=new JTextField();
-            textoPlanMalevolo.setBounds(200,380,140,15);
-            panelVillanos.add(textoPlanMalevolo);
-
-            JLabel equipo = new JLabel("EQUIPO:");
-            equipo.setBounds(10, 400, 140, 10);
-            equipo.setFont(new Font("Times New Roman", Font.BOLD, 12));
-            panelVillanos.add(equipo);
-            JTextField textoEquipo=new JTextField();
-            textoEquipo.setBounds(200,400,140,15);
-            panelVillanos.add(textoEquipo);
-
+            JLabel dichos = new JLabel("DICHOS:");
+            dichos.setBounds(10, 380, 140, 15);
+            dichos.setFont(new Font("Times New Roman", Font.BOLD, 12));
+            panelVillanos.add(dichos);
+            JTextField textoDichos = new JTextField();
+            textoDichos.setBounds(200, 380, 140, 15);
+            panelVillanos.add(textoDichos);
 
             JLabel estadoMental = new JLabel("ESTADO MENTAL:");
-            estadoMental.setBounds(10, 420, 140, 10);
+            estadoMental.setBounds(10, 395, 140, 15);
             estadoMental.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(estadoMental);
-            JTextField textoEstadoMental=new JTextField();
-            textoEstadoMental.setBounds(200,420,140,15);
+            JTextField textoEstadoMental = new JTextField();
+            textoEstadoMental.setBounds(200, 395, 140, 15);
             panelVillanos.add(textoEstadoMental);
 
+            JLabel planMalevolo = new JLabel("PLAN MALÉVOLO:");
+            planMalevolo.setBounds(10, 410, 140, 15);
+            planMalevolo.setFont(new Font("Times New Roman", Font.BOLD, 12));
+            panelVillanos.add(planMalevolo);
+            JTextField textoPlanMalevolo = new JTextField();
+            textoPlanMalevolo.setBounds(200, 410, 140, 15);
+            panelVillanos.add(textoPlanMalevolo);
+
+
             JButton botonVolver = new JButton("Volver");
-            botonVolver.setBounds(200, 450, 100, 30);
+            botonVolver.setBounds(400, 200, 100, 30);
             botonVolver.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     mostrarPanelPrincipal();
@@ -496,150 +518,178 @@ public class Ventana extends JFrame {
             panelAntiheroes.add(datos);
 
             JLabel nombre = new JLabel("NOMBRE:");
-            nombre.setBounds(10, 70, 140, 10);
+            nombre.setBounds(10, 80, 140, 15);
             nombre.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(nombre);
-            JTextField textoNombre=new JTextField();
-            textoNombre.setBounds(200,70,140,15);
-            panelAntiheroes.add(textoNombre);
+            JTextField textoNom = new JTextField();
+            textoNom.setBounds(200, 80, 140, 15);
+            panelAntiheroes.add(textoNom);
 
             JLabel edad = new JLabel("EDAD:");
-            edad.setBounds(10, 90, 140, 10);
+            edad.setBounds(10, 95, 140, 15);
             edad.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(edad);
-            JTextField textoEdad=new JTextField();
-            textoEdad.setBounds(200,90,140,15);
+            JTextField textoEdad = new JTextField();
+            textoEdad.setBounds(200, 95, 140, 15);
             panelAntiheroes.add(textoEdad);
 
             JLabel nacionalidad = new JLabel("NACIONALIDAD:");
-            nacionalidad.setBounds(10, 110, 140, 10);
+            nacionalidad.setBounds(10, 110, 140, 15);
             nacionalidad.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(nacionalidad);
-            JTextField textoNacionalidad=new JTextField();
-            textoNacionalidad.setBounds(200,110,140,15);
-            panelAntiheroes.add(textoNacionalidad);
+            JTextField textoNacion = new JTextField();
+            textoNacion.setBounds(200, 110, 140, 15);
+            panelAntiheroes.add(textoNacion);
 
             JLabel genero = new JLabel("GÉNERO:");
-            genero.setBounds(10, 130, 140, 10);
+            genero.setBounds(10, 125, 140, 15);
             genero.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(genero);
-            JTextField textoGenero=new JTextField();
-            textoGenero.setBounds(200,130,140,15);
-            panelAntiheroes.add(textoGenero);
+            JTextField textoGen = new JTextField();
+            textoGen.setBounds(200, 125, 140, 15);
+            panelAntiheroes.add(textoGen);
 
             JLabel altura = new JLabel("ALTURA:");
-            altura.setBounds(10, 150, 140, 10);
+            altura.setBounds(10, 140, 140, 15);
             altura.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(altura);
-            JTextField textoAltura=new JTextField();
-            textoAltura.setBounds(200,150,140,15);
-            panelAntiheroes.add(textoAltura);
+            JTextField textoAlt = new JTextField();
+            textoAlt.setBounds(200, 140, 140, 15);
+            panelAntiheroes.add(textoAlt);
 
             JLabel estadoCivil = new JLabel("ESTADO CIVIL:");
-            estadoCivil.setBounds(10, 170, 140, 10);
+            estadoCivil.setBounds(10, 155, 140, 15);
             estadoCivil.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(estadoCivil);
-            JTextField textoEstadocivil=new JTextField();
-            textoEstadocivil.setBounds(200,170,140,15);
-            panelAntiheroes.add(textoEstadocivil);
-
+            JTextField textoEstado = new JTextField();
+            textoEstado.setBounds(200, 155, 140, 15);
+            panelAntiheroes.add(textoEstado);
 
             JLabel datosProfesionales = new JLabel("DATOS PROFESIONALES");
-            datosProfesionales.setBounds(10, 185, 300, 15);
+            datosProfesionales.setBounds(10, 170, 300, 15);
             datosProfesionales.setFont(new Font("Times New Roman", Font.BOLD, 18));
             panelAntiheroes.add(datosProfesionales);
 
             JLabel alias = new JLabel("ALIAS:");
-            alias.setBounds(10, 205, 140, 10);
+            alias.setBounds(10, 185, 140, 15);
             alias.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(alias);
-            JTextField textoAlias=new JTextField();
-            textoAlias.setBounds(200,205,140,15);
-            panelAntiheroes.add(textoAlias);
+            JTextField textoAliasActor = new JTextField();
+            textoAliasActor.setBounds(200, 185, 140, 15);
+            panelAntiheroes.add(textoAliasActor);
 
-            JLabel anosCarrera = new JLabel("AÑOS DE CARRERA:");
-            anosCarrera.setBounds(10, 225, 140, 10);
+            JLabel anosCarrera = new JLabel("TIEMPO DE EXPERIENCIA:");
+            anosCarrera.setBounds(10, 200, 140, 15);
             anosCarrera.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(anosCarrera);
-            JTextField textoAnosCarrera=new JTextField();
-            textoAnosCarrera.setBounds(200,225,140,15);
-            panelAntiheroes.add(textoAnosCarrera);
+            JTextField textoCarrera = new JTextField();
+            textoCarrera.setBounds(200, 200, 140, 15);
+            panelAntiheroes.add(textoCarrera);
 
             JLabel premios = new JLabel("PREMIOS:");
-            premios.setBounds(10, 245, 140, 10);
+            premios.setBounds(10, 215, 140, 15);
             premios.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(premios);
-            JTextField textoPremios=new JTextField();
-            textoPremios.setBounds(200,245,140,15);
+            JTextField textoPremios = new JTextField();
+            textoPremios.setBounds(200, 215, 140, 15);
             panelAntiheroes.add(textoPremios);
 
             JLabel papeles = new JLabel("PAPELES:");
-            papeles.setBounds(10, 265, 140, 10);
+            papeles.setBounds(10, 230, 140, 15);
             papeles.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(papeles);
-            JTextField textoPapeles=new JTextField();
-            textoPapeles.setBounds(200,265,140,15);
+            JTextField textoPapeles = new JTextField();
+            textoPapeles.setBounds(200, 230, 140, 15);
             panelAntiheroes.add(textoPapeles);
 
-            JLabel datosPersonaje = new JLabel("DATOS DEL PERSONAJE");
-            datosPersonaje.setBounds(10, 280, 300, 15);
+            JLabel datosPapel = new JLabel("DATOS DEL PAPEL");
+            datosPapel.setBounds(10, 245, 300, 15);
+            datosPapel.setFont(new Font("Times New Roman", Font.BOLD, 18));
+            panelAntiheroes.add(datosPapel);
+
+            JLabel anoInicio = new JLabel("FECHA INICIO:");
+            anoInicio.setBounds(10, 260, 140, 15);
+            anoInicio.setFont(new Font("Times New Roman", Font.BOLD, 12));
+            panelAntiheroes.add(anoInicio);
+            JTextField textoAnoInicio = new JTextField();
+            textoAnoInicio.setBounds(200, 260, 140, 15);
+            panelAntiheroes.add(textoAnoInicio);
+
+            JLabel anoFin = new JLabel("FECHA FINAL:");
+            anoFin.setBounds(10, 275, 140, 15);
+            anoFin.setFont(new Font("Times New Roman", Font.BOLD, 12));
+            panelAntiheroes.add(anoFin);
+            JTextField textoAnoFin = new JTextField();
+            textoAnoFin.setBounds(200, 275, 140, 15);
+            panelAntiheroes.add(textoAnoFin);
+
+            JLabel peliculas = new JLabel("PELICULAS:");
+            peliculas.setBounds(10, 290, 140, 15);
+            peliculas.setFont(new Font("Times New Roman", Font.BOLD, 12));
+            panelAntiheroes.add(peliculas);
+            JTextField textoPeliculas = new JTextField();
+            textoPeliculas.setBounds(200, 290, 140, 15);
+            panelAntiheroes.add(textoPeliculas);
+
+            JLabel datosPersonaje = new JLabel("DATOS PERSONAJE");
+            datosPersonaje.setBounds(10, 305, 300, 15);
             datosPersonaje.setFont(new Font("Times New Roman", Font.BOLD, 18));
             panelAntiheroes.add(datosPersonaje);
 
             JLabel nombrep = new JLabel("NOMBRE:");
-            nombrep.setBounds(10, 300, 140, 10);
+            nombrep.setBounds(10, 320, 140, 15);
             nombrep.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(nombrep);
-            JTextField textoNombrep=new JTextField();
-            textoNombrep.setBounds(200,300,140,15);
+            JTextField textoNombrep = new JTextField();
+            textoNombrep.setBounds(200, 320, 140, 15);
             panelAntiheroes.add(textoNombrep);
 
             JLabel aliasp = new JLabel("ALIAS:");
-            aliasp.setBounds(10, 320, 140, 10);
+            aliasp.setBounds(10, 335, 140, 15);
             aliasp.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(aliasp);
-            JTextField textoAliasp=new JTextField();
-            textoAliasp.setBounds(200,320,140,15);
+            JTextField textoAliasp = new JTextField();
+            textoAliasp.setBounds(200, 335, 140, 15);
             panelAntiheroes.add(textoAliasp);
 
             JLabel poderes = new JLabel("PODERES:");
-            poderes.setBounds(10, 340, 140, 10);
+            poderes.setBounds(10, 350, 140, 15);
             poderes.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(poderes);
-            JTextField textoPoderes=new JTextField();
-            textoPoderes.setBounds(200,340,140,15);
+            JTextField textoPoderes = new JTextField();
+            textoPoderes.setBounds(200, 350, 140, 15);
             panelAntiheroes.add(textoPoderes);
 
             JLabel debilidades = new JLabel("DEBILIDADES:");
-            debilidades.setBounds(10, 360, 140, 10);
+            debilidades.setBounds(10, 365, 140, 15);
             debilidades.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(debilidades);
-            JTextField textoDebilidades=new JTextField();
-            textoDebilidades.setBounds(200,360,140,15);
+            JTextField textoDebilidades = new JTextField();
+            textoDebilidades.setBounds(200, 365, 140, 15);
             panelAntiheroes.add(textoDebilidades);
 
             JLabel dichos = new JLabel("DICHOS:");
-            dichos.setBounds(10, 380, 140, 10);
+            dichos.setBounds(10, 380, 140, 15);
             dichos.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(dichos);
-            JTextField textoDichos=new JTextField();
-            textoDichos.setBounds(200,380,140,15);
+            JTextField textoDichos = new JTextField();
+            textoDichos.setBounds(200, 380, 140, 15);
             panelAntiheroes.add(textoDichos);
 
             JLabel nivelAmenaza = new JLabel("NIVEL DE AMENAZA:");
-            nivelAmenaza.setBounds(10, 400, 140, 10);
+            nivelAmenaza.setBounds(10, 395, 140, 15);
             nivelAmenaza.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(nivelAmenaza);
-            JTextField textoNivelAmenaza=new JTextField();
-            textoNivelAmenaza.setBounds(200,400,140,15);
+            JTextField textoNivelAmenaza = new JTextField();
+            textoNivelAmenaza.setBounds(200, 395, 140, 15);
             panelAntiheroes.add(textoNivelAmenaza);
 
             JLabel motivacion = new JLabel("MOTIVACIÓN:");
-            motivacion.setBounds(10, 420, 140, 10);
+            motivacion.setBounds(10, 410, 140, 15);
             motivacion.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(motivacion);
-            JTextField textoMotivacion=new JTextField();
-            textoMotivacion.setBounds(200,420,140,15);
+            JTextField textoMotivacion = new JTextField();
+            textoMotivacion.setBounds(200, 410, 140, 15);
             panelAntiheroes.add(textoMotivacion);
 
             JButton botonVolver = new JButton("Volver");
