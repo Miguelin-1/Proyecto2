@@ -201,7 +201,6 @@ public class Ventana extends JFrame {
             dichos.setBounds(10, 380, 140, 10);
             dichos.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(dichos);
-
             JTextField textoDichos=new JTextField();
             textoDichos.setBounds(200,380,140,15);
             panelHeroes.add(textoDichos);
