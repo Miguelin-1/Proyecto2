@@ -170,14 +170,17 @@ public class Ventana extends JFrame {
             JTextField textoNombrep=new JTextField();
             textoNombrep.setBounds(200,300,140,15);
             panelHeroes.add(textoNombrep);
+
+
             JLabel aliasp = new JLabel("ALIAS:");
             aliasp.setBounds(10, 320, 140, 10);
             aliasp.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(aliasp);
-
             JTextField textoAliasp=new JTextField();
             textoAliasp.setBounds(200,320,140,15);
             panelHeroes.add(textoAliasp);
+
+
             JLabel poderes = new JLabel("PODERES:");
             poderes.setBounds(10, 340, 140, 10);
             poderes.setFont(new Font("Times New Roman", Font.BOLD, 12));
