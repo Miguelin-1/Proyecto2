@@ -289,6 +289,9 @@ public class Ventana extends JFrame {
             altura.setBounds(10, 150, 140, 10);
             altura.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(altura);
+            JTextField textoAltura=new JTextField();
+            textoAltura.setBounds(200,150,140,15);
+            panelVillanos.add(textoAltura);
 
             JLabel estadoCivil = new JLabel("ESTADO CIVIL:");
             estadoCivil.setBounds(10, 170, 140, 10);
