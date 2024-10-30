@@ -330,6 +330,10 @@ public class Ventana extends JFrame {
             premios.setBounds(10, 245, 140, 10);
             premios.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(premios);
+            JTextField textoPremios=new JTextField();
+            textoPremios.setBounds(200,245,140,15);
+            panelVillanos.add(textoPremios);
+
 
             JLabel papeles = new JLabel("PAPELES:");
             papeles.setBounds(10, 265, 140, 10);
