@@ -314,6 +314,9 @@ public class Ventana extends JFrame {
             alias.setBounds(10, 205, 140, 10);
             alias.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(alias);
+            JTextField textoAlias=new JTextField();
+            textoAlias.setBounds(200,205,140,15);
+            panelVillanos.add(textoAlias);
 
             JLabel anosCarrera = new JLabel("AÑOS DE CARRERA:");
             anosCarrera.setBounds(10, 225, 140, 10);
