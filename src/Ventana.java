@@ -369,6 +369,9 @@ public class Ventana extends JFrame {
             poderes.setBounds(10, 340, 140, 10);
             poderes.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(poderes);
+            JTextField textoPoderes=new JTextField();
+            textoPoderes.setBounds(200,340,140,15);
+            panelVillanos.add(textoPoderes);
 
             JLabel debilidades = new JLabel("DEBILIDADES:");
             debilidades.setBounds(10, 360, 140, 10);
