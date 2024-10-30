@@ -353,6 +353,9 @@ public class Ventana extends JFrame {
             nombrep.setBounds(10, 300, 140, 10);
             nombrep.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(nombrep);
+            JTextField textoNombrep=new JTextField();
+            textoNombrep.setBounds(200,300,140,15);
+            panelVillanos.add(textoNombrep);
 
             JLabel aliasp = new JLabel("ALIAS:");
             aliasp.setBounds(10, 320, 140, 10);
