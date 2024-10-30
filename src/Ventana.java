@@ -212,6 +212,7 @@ public class Ventana extends JFrame {
             JTextField textoEquipo=new JTextField();
             textoEquipo.setBounds(200,400,140,15);
             panelHeroes.add(textoEquipo);
+
             JLabel nivelBondad = new JLabel("NIVEL DE BONDAD:");
             nivelBondad.setBounds(10, 420, 140, 10);
             nivelBondad.setFont(new Font("Times New Roman", Font.BOLD, 12));
@@ -262,6 +263,9 @@ public class Ventana extends JFrame {
             edad.setBounds(10, 90, 140, 10);
             edad.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(edad);
+            JTextField textoEdad=new JTextField();
+            textoEdad.setBounds(200,90,140,15);
+            panelVillanos.add(textoEdad);
 
             JLabel nacionalidad = new JLabel("NACIONALIDAD:");
             nacionalidad.setBounds(10, 110, 140, 10);
