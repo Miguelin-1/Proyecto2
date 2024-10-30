@@ -271,6 +271,10 @@ public class Ventana extends JFrame {
             nacionalidad.setBounds(10, 110, 140, 10);
             nacionalidad.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(nacionalidad);
+            JTextField textoNacionalidad=new JTextField();
+            textoNacionalidad.setBounds(200,110,140,15);
+            panelVillanos.add(textoNacionalidad);
+
 
             JLabel genero = new JLabel("GÉNERO:");
             genero.setBounds(10, 130, 140, 10);
