@@ -43,6 +43,7 @@ public class ModificarArchivos {
                 "Nivel de bondad: " + heroe.getNivelBondad() + "\n" +
                 "---------------------------\n";
 
+        String nombreArchivo = "";
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo))) {
             writer.write(contenido);
         } catch (IOException e) {
