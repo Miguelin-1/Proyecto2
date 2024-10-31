@@ -1,5 +1,3 @@
-import javax.swing.*;
-import java.awt.*;
 import java.io.*;
 import java.util.List;
 import java.util.Scanner;
@@ -45,7 +43,7 @@ public class ModificarArchivos {
                 "Nivel de bondad: " + heroe.getNivelBondad() + "\n" +
                 "---------------------------\n";
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombrea))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo))) {
             writer.write(contenido);
         } catch (IOException e) {
             e.printStackTrace();
@@ -81,7 +79,3 @@ public class ModificarArchivos {
                 JOptionPane.showMessageDialog(null, "Error al abrir el archivo", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-
-
-    }
-
