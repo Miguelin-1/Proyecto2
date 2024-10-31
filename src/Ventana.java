@@ -86,7 +86,7 @@ public class Ventana extends JFrame {
             nombre.setBounds(10, 80, 140, 15);
             nombre.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(nombre);
-            JTextField textoNom = new JTextField();
+            textoNom = new JTextField();
             textoNom.setBounds(200, 80, 140, 15);
             panelHeroes.add(textoNom);
 
@@ -94,7 +94,7 @@ public class Ventana extends JFrame {
             edad.setBounds(10, 95, 140, 15);
             edad.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(edad);
-            JTextField textoEdad = new JTextField();
+            textoEdad = new JTextField();
             textoEdad.setBounds(200, 95, 140, 15);
             panelHeroes.add(textoEdad);
 
@@ -102,7 +102,7 @@ public class Ventana extends JFrame {
             nacionalidad.setBounds(10, 110, 140, 15);
             nacionalidad.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(nacionalidad);
-            JTextField textoNacion = new JTextField();
+            textoNacion = new JTextField();
             textoNacion.setBounds(200, 110, 140, 15);
             panelHeroes.add(textoNacion);
 
@@ -110,7 +110,7 @@ public class Ventana extends JFrame {
             genero.setBounds(10, 125, 140, 15);
             genero.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(genero);
-            JTextField textoGen = new JTextField();
+            textoGen = new JTextField();
             textoGen.setBounds(200, 125, 140, 15);
             panelHeroes.add(textoGen);
 
@@ -118,7 +118,7 @@ public class Ventana extends JFrame {
             altura.setBounds(10, 140, 140, 15);
             altura.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(altura);
-            JTextField textoAlt = new JTextField();
+            textoAlt = new JTextField();
             textoAlt.setBounds(200, 140, 140, 15);
             panelHeroes.add(textoAlt);
 
@@ -126,7 +126,7 @@ public class Ventana extends JFrame {
             estadoCivil.setBounds(10, 155, 140, 15);
             estadoCivil.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(estadoCivil);
-            JTextField textoEstado = new JTextField();
+            textoEstado = new JTextField();
             textoEstado.setBounds(200, 155, 140, 15);
             panelHeroes.add(textoEstado);
 
@@ -139,7 +139,7 @@ public class Ventana extends JFrame {
             alias.setBounds(10, 185, 140, 15);
             alias.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(alias);
-            JTextField textoAliasActor = new JTextField();
+            textoAliasActor = new JTextField();
             textoAliasActor.setBounds(200, 185, 140, 15);
             panelHeroes.add(textoAliasActor);
 
@@ -147,7 +147,7 @@ public class Ventana extends JFrame {
             anosCarrera.setBounds(10, 200, 140, 15);
             anosCarrera.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(anosCarrera);
-            JTextField textoCarrera = new JTextField();
+            textoCarrera = new JTextField();
             textoCarrera.setBounds(200, 200, 140, 15);
             panelHeroes.add(textoCarrera);
 
@@ -155,7 +155,7 @@ public class Ventana extends JFrame {
             premios.setBounds(10, 215, 140, 15);
             premios.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(premios);
-            JTextField textoPremios = new JTextField();
+            textoPremios = new JTextField();
             textoPremios.setBounds(200, 215, 140, 15);
             panelHeroes.add(textoPremios);
 
@@ -163,7 +163,7 @@ public class Ventana extends JFrame {
             papeles.setBounds(10, 230, 140, 15);
             papeles.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(papeles);
-            JTextField textoPapeles = new JTextField();
+            textoPapeles = new JTextField();
             textoPapeles.setBounds(200, 230, 140, 15);
             panelHeroes.add(textoPapeles);
 
@@ -176,23 +176,23 @@ public class Ventana extends JFrame {
             anoInicio.setBounds(10, 260, 140, 15);
             anoInicio.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(anoInicio);
-            JTextField textoAnoInicio = new JTextField();
-            textoAnoInicio.setBounds(200, 260, 140, 15);
-            panelHeroes.add(textoAnoInicio);
+            textoAnoinicio = new JTextField();
+            textoAnoinicio.setBounds(200, 260, 140, 15);
+            panelHeroes.add(textoAnoinicio);
 
             JLabel anoFin = new JLabel("FECHA FINAL:");
             anoFin.setBounds(10, 275, 140, 15);
             anoFin.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(anoFin);
-            JTextField textoAnoFin = new JTextField();
-            textoAnoFin.setBounds(200, 275, 140, 15);
-            panelHeroes.add(textoAnoFin);
+            textoAnofin = new JTextField();
+            textoAnofin.setBounds(200, 275, 140, 15);
+            panelHeroes.add(textoAnofin);
 
             JLabel peliculas = new JLabel("PELICULAS:");
             peliculas.setBounds(10, 290, 140, 15);
             peliculas.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(peliculas);
-            JTextField textoPeliculas = new JTextField();
+            textoPeliculas = new JTextField();
             textoPeliculas.setBounds(200, 290, 140, 15);
             panelHeroes.add(textoPeliculas);
 
@@ -205,7 +205,7 @@ public class Ventana extends JFrame {
             nombrep.setBounds(10, 320, 140, 15);
             nombrep.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(nombrep);
-            JTextField textoNombrep = new JTextField();
+            textoNombrep = new JTextField();
             textoNombrep.setBounds(200, 320, 140, 15);
             panelHeroes.add(textoNombrep);
 
@@ -213,7 +213,7 @@ public class Ventana extends JFrame {
             aliasp.setBounds(10, 335, 140, 15);
             aliasp.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(aliasp);
-            JTextField textoAliasp = new JTextField();
+            textoAliasp = new JTextField();
             textoAliasp.setBounds(200, 335, 140, 15);
             panelHeroes.add(textoAliasp);
 
@@ -221,7 +221,7 @@ public class Ventana extends JFrame {
             poderes.setBounds(10, 350, 140, 15);
             poderes.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(poderes);
-            JTextField textoPoderes = new JTextField();
+            textoPoderes = new JTextField();
             textoPoderes.setBounds(200, 350, 140, 15);
             panelHeroes.add(textoPoderes);
 
@@ -229,7 +229,7 @@ public class Ventana extends JFrame {
             debilidades.setBounds(10, 365, 140, 15);
             debilidades.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(debilidades);
-            JTextField textoDebilidades = new JTextField();
+            textoDebilidades = new JTextField();
             textoDebilidades.setBounds(200, 365, 140, 15);
             panelHeroes.add(textoDebilidades);
 
@@ -237,7 +237,7 @@ public class Ventana extends JFrame {
             dichos.setBounds(10, 380, 140, 15);
             dichos.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(dichos);
-            JTextField textoDichos = new JTextField();
+            textoDichos = new JTextField();
             textoDichos.setBounds(200, 380, 140, 15);
             panelHeroes.add(textoDichos);
 
@@ -245,7 +245,7 @@ public class Ventana extends JFrame {
             equipo.setBounds(10, 395, 140, 15);
             equipo.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(equipo);
-            JTextField textoEquipo = new JTextField();
+            textoEquipo = new JTextField();
             textoEquipo.setBounds(200, 395, 140, 15);
             panelHeroes.add(textoEquipo);
 
@@ -253,7 +253,7 @@ public class Ventana extends JFrame {
             nivelBondad.setBounds(10, 410, 140, 15);
             nivelBondad.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(nivelBondad);
-            JTextField textoNivelBondad = new JTextField();
+            textoNivelBondad = new JTextField();
             textoNivelBondad.setBounds(200, 410, 140, 15);
             panelHeroes.add(textoNivelBondad);
 
@@ -273,9 +273,9 @@ public class Ventana extends JFrame {
         this.revalidate();
         this.repaint();
 
-        JButton botontxt=new JButton("Exportar a txt");
-        botontxt.setBounds(350,250,100,30);
-        botontxt.addActionListener(new ActionListener() {
+        JButton botonGuardarH=new JButton("Guardar Héroe");
+        botonGuardarH.setBounds(350,250,100,30);
+        botonGuardarH.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(contarArchivos<=10){
@@ -290,12 +290,32 @@ public class Ventana extends JFrame {
                     listaHeroes.add(heroe);
                     ModificarArchivos.escribirArchivos(contarArchivos,heroe);
                     contarArchivos++;
+                    JOptionPane.showMessageDialog(null, "Héroe guardado en archivo " + (contarArchivos - 1));
 
-
-
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Ya se han guardado los 10 héroes permitidos.");
                 }
             }
         });
+        panelHeroes.add(botonGuardarH);
+
+        JButton botonAbrir=new JButton("Abrir txt");
+        botonAbrir.setBounds(350, 300, 100, 30);
+        botonAbrir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(contarArchivos<=10){
+                    ModificarArchivos.abrirArchivos((contarArchivos-1));
+                    contarArchivos++;
+                }
+                else {
+                    JOptionPane.showMessageDialog(null,"Ya no se pueden hacer mas archivos");
+                }
+            }
+        });
+        panelHeroes.add(botonAbrir);
+
     }
     private void mostrarPanelVillanos() {
         if (panelVillanos == null) {
