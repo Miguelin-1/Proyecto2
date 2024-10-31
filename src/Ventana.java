@@ -14,9 +14,11 @@ public class Ventana extends JFrame {
     private JPanel panelVillanos;
     private int contarArchivos=1;
     private List<Heroe> listaHeroes = new ArrayList<>();
+    private List<Villano> listaVillanos = new ArrayList<>();
+    private List<Antiheroe> listaAntiheroes = new ArrayList<>();
     private ModificarArchivos modifcarArchivos = new ModificarArchivos();
 
-    private JTextField textoNom,textoEdad,textoNacion,textoGen,textoAlt,textoEstado,textoAliasActor,textoCarrera,textoPremios,textoPapeles,textoNombrep,textoAliasp,textoPoderes,textoDebilidades,textoDichos,textoEquipo,textoNivelBondad,textoAnoinicio,textoAnofin,textoPeliculas;
+    private JTextField textoNom,textoEdad,textoNacion,textoGen,textoAlt,textoEstado,textoAliasActor,textoCarrera,textoPremios,textoPapeles,textoNombrep,textoAliasp,textoPoderes,textoDebilidades,textoDichos,textoEquipo,textoNivelBondad,textoAnoinicio,textoAnofin,textoPeliculas,textoPlanMalevolo,textoEstadoMental,textoComplices,textoMotivacion,textoNivelAmenaza;
 
     public Ventana() {
         setSize(500, 550);
@@ -144,7 +146,7 @@ public class Ventana extends JFrame {
             panelHeroes.add(textoAliasActor);
 
             JLabel anosCarrera = new JLabel("TIEMPO DE EXPERIENCIA:");
-            anosCarrera.setBounds(10, 200, 140, 15);
+            anosCarrera.setBounds(10, 200, 160, 15);
             anosCarrera.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelHeroes.add(anosCarrera);
             textoCarrera = new JTextField();
@@ -273,7 +275,7 @@ public class Ventana extends JFrame {
         this.revalidate();
         this.repaint();
 
-        JButton botonGuardarH=new JButton("Guardar Héroe");
+        JButton botonGuardarH=new JButton("Guardar");
         botonGuardarH.setBounds(350,250,100,30);
         botonGuardarH.addActionListener(new ActionListener() {
             @Override
@@ -289,8 +291,8 @@ public class Ventana extends JFrame {
                     Heroe heroe=new Heroe(Integer.parseInt(textoEdad.getText()),textoNom.getText(),textoNacion.getText(),textoGen.getText(),textoAlt.getText(),textoEstado.getText(),textoAliasActor.getText(),Integer.parseInt(textoCarrera.getText()),premiosList,papelesList,Integer.parseInt(textoAnoinicio.getText()),Integer.parseInt(textoAnofin.getText()),peliculasList,textoNombrep.getText(),textoAliasp.getText(),poderesList,debilidadesList,dichosList,textoEquipo.getText(),Integer.parseInt(textoNivelBondad.getText()));
                     listaHeroes.add(heroe);
                     ModificarArchivos.escribirArchivos(contarArchivos,heroe);
+                    JOptionPane.showMessageDialog(null, "Héroe guardado en archivo " + (contarArchivos));
                     contarArchivos++;
-                    JOptionPane.showMessageDialog(null, "Héroe guardado en archivo " + (contarArchivos - 1));
 
                 }
                 else {
@@ -306,7 +308,7 @@ public class Ventana extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(contarArchivos<=10){
-                    ModificarArchivos.abrirArchivos((contarArchivos-1));
+                    ModificarArchivos.abrirArchivos((contarArchivos));
                     contarArchivos++;
                 }
                 else {
@@ -393,7 +395,7 @@ public class Ventana extends JFrame {
             panelVillanos.add(textoAliasActor);
 
             JLabel anosCarrera = new JLabel("TIEMPO DE EXPERIENCIA:");
-            anosCarrera.setBounds(10, 200, 140, 15);
+            anosCarrera.setBounds(10, 200, 160, 15);
             anosCarrera.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelVillanos.add(anosCarrera);
             JTextField textoCarrera = new JTextField();
@@ -506,9 +508,17 @@ public class Ventana extends JFrame {
             textoPlanMalevolo.setBounds(200, 410, 140, 15);
             panelVillanos.add(textoPlanMalevolo);
 
+            JLabel complices = new JLabel("COMPLICES:");
+            complices.setBounds(10, 425, 140, 15);
+            complices.setFont(new Font("Times New Roman", Font.BOLD, 12));
+            panelVillanos.add(complices);
+            JTextField textoComplices = new JTextField();
+            textoComplices.setBounds(200, 425, 140, 15);
+            panelVillanos.add(textoComplices);
+
 
             JButton botonVolver = new JButton("Volver");
-            botonVolver.setBounds(400, 200, 100, 30);
+            botonVolver.setBounds(350, 200, 100, 30);
             botonVolver.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     mostrarPanelPrincipal();
@@ -521,7 +531,53 @@ public class Ventana extends JFrame {
         this.getContentPane().add(panelVillanos);
         this.revalidate();
         this.repaint();
+
+        JButton botonGuardarH=new JButton("Guardar");
+        botonGuardarH.setBounds(350,250,100,30);
+        botonGuardarH.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(contarArchivos<=10){
+                    ArrayList<String>premiosList=new ArrayList<>(Arrays.asList(textoPremios.getText().split(",")));
+                    ArrayList<String>papelesList=new ArrayList<>(Arrays.asList(textoPapeles.getText().split(",")));
+                    ArrayList<String>peliculasList=new ArrayList<>(Arrays.asList(textoPeliculas.getText().split(",")));
+                    ArrayList<String>poderesList=new ArrayList<>(Arrays.asList(textoPoderes.getText().split(",")));
+                    ArrayList<String>debilidadesList=new ArrayList<>(Arrays.asList(textoDebilidades.getText().split(",")));
+                    ArrayList<String>dichosList=new ArrayList<>(Arrays.asList(textoDichos.getText().split(",")));
+                    ArrayList<String>complicesList=new ArrayList<>(Arrays.asList(textoComplices.getText().split(",")));
+
+                    Villano villano= new Villano(Integer.parseInt(textoEdad.getText()),textoNom.getText(),textoNacion.getText(),textoGen.getText(),textoAlt.getText(),textoEstado.getText(),textoAliasActor.getText(),Integer.parseInt(textoCarrera.getText()),premiosList,papelesList,Integer.parseInt(textoAnoinicio.getText()),Integer.parseInt(textoAnofin.getText()),peliculasList,textoNombrep.getText(),textoAliasp.getText(),poderesList,debilidadesList,dichosList,complicesList,textoEstadoMental.getText(),textoPlanMalevolo.getText());
+                    listaVillanos.add(villano);
+                    ModificarArchivos.escribirArchivosV(contarArchivos,villano);
+                    contarArchivos++;
+                    JOptionPane.showMessageDialog(null, "Héroe guardado en archivo " + (contarArchivos - 1));
+
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Ya se han guardado los 10 héroes permitidos.");
+                }
+            }
+        });
+        panelVillanos.add(botonGuardarH);
+
+
+        JButton botonAbrir=new JButton("Abrir txt");
+        botonAbrir.setBounds(350, 300, 100, 30);
+        botonAbrir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(contarArchivos<=10){
+                    ModificarArchivos.abrirArchivos((contarArchivos));
+                    contarArchivos++;
+                }
+                else {
+                    JOptionPane.showMessageDialog(null,"Ya no se pueden hacer mas archivos");
+                }
+            }
+        });
+        panelVillanos.add(botonAbrir);
     }
+
     private void mostrarPanelAntiheroes() {
         if (panelAntiheroes == null) {
             panelAntiheroes = new JPanel();
@@ -599,7 +655,7 @@ public class Ventana extends JFrame {
             panelAntiheroes.add(textoAliasActor);
 
             JLabel anosCarrera = new JLabel("TIEMPO DE EXPERIENCIA:");
-            anosCarrera.setBounds(10, 200, 140, 15);
+            anosCarrera.setBounds(10, 200, 160, 15);
             anosCarrera.setFont(new Font("Times New Roman", Font.BOLD, 12));
             panelAntiheroes.add(anosCarrera);
             JTextField textoCarrera = new JTextField();
@@ -713,7 +769,7 @@ public class Ventana extends JFrame {
             panelAntiheroes.add(textoMotivacion);
 
             JButton botonVolver = new JButton("Volver");
-            botonVolver.setBounds(200, 450, 100, 30);
+            botonVolver.setBounds(350, 200, 100, 30);
             botonVolver.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     mostrarPanelPrincipal();
@@ -726,6 +782,50 @@ public class Ventana extends JFrame {
         this.getContentPane().add(panelAntiheroes);
         this.revalidate();
         this.repaint();
+
+        JButton botonGuardarH=new JButton("Guardar");
+        botonGuardarH.setBounds(350,250,100,30);
+        botonGuardarH.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(contarArchivos<=10){
+                    ArrayList<String>premiosList=new ArrayList<>(Arrays.asList(textoPremios.getText().split(",")));
+                    ArrayList<String>papelesList=new ArrayList<>(Arrays.asList(textoPapeles.getText().split(",")));
+                    ArrayList<String>peliculasList=new ArrayList<>(Arrays.asList(textoPeliculas.getText().split(",")));
+                    ArrayList<String>poderesList=new ArrayList<>(Arrays.asList(textoPoderes.getText().split(",")));
+                    ArrayList<String>debilidadesList=new ArrayList<>(Arrays.asList(textoDebilidades.getText().split(",")));
+                    ArrayList<String>dichosList=new ArrayList<>(Arrays.asList(textoDichos.getText().split(",")));
+
+                    Antiheroe antiheroe= new Antiheroe(Integer.parseInt(textoEdad.getText()),textoNom.getText(),textoNacion.getText(),textoGen.getText(),textoAlt.getText(),textoEstado.getText(),textoAliasActor.getText(),Integer.parseInt(textoCarrera.getText()),premiosList,papelesList,Integer.parseInt(textoAnoinicio.getText()),Integer.parseInt(textoAnofin.getText()),peliculasList,textoNombrep.getText(),textoAliasp.getText(),poderesList,debilidadesList,dichosList,textoMotivacion.getText(),Integer.parseInt(textoNivelAmenaza.getText()));
+                    listaAntiheroes.add(antiheroe);
+                    ModificarArchivos.escribirArchivosA(contarArchivos,antiheroe);
+                    contarArchivos++;
+                    JOptionPane.showMessageDialog(null, "Héroe guardado en archivo " + (contarArchivos - 1));
+
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Ya se han guardado los 10 héroes permitidos.");
+                }
+            }
+        });
+        panelAntiheroes.add(botonGuardarH);
+
+
+        JButton botonAbrir=new JButton("Abrir txt");
+        botonAbrir.setBounds(350, 300, 100, 30);
+        botonAbrir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(contarArchivos<=10){
+                    ModificarArchivos.abrirArchivos((contarArchivos));
+                    contarArchivos++;
+                }
+                else {
+                    JOptionPane.showMessageDialog(null,"Ya no se pueden hacer mas archivos");
+                }
+            }
+        });
+        panelAntiheroes.add(botonAbrir);
     }
 
 

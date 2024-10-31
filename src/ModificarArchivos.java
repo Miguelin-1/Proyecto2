@@ -51,16 +51,70 @@ public class ModificarArchivos {
             e.printStackTrace();
         }
     }
+    public static void escribirArchivosV (int numeroArchivo, Villano villano) {
+        String nombrea = "archivo" + numeroArchivo + ".txt";
+        String contenido = "Este es el Villano que acabas de crear: \n" +
+                "Nombre: " + villano.getNombre() + "\n" +
+                "Edad: " + villano.getEdad() + "\n" +
+                "Nacionalidad: " + villano.getNacionalidad() + "\n" +
+                "Género: " + villano.getGenero() + "\n" +
+                "Altura: " + villano.getAltura() + "\n" +
+                "Estado Civil: " + villano.getEstadoCivil() + "\n" +
+                "Alias: " + villano.getAlias() + "\n" +
+                "Años de experiencia: " + villano.getAnosCarrera() + "\n" +
+                "Premios: " + villano.getPremios() + "\n" +
+                "Papeles: " + villano.getPapeles() + "\n" +
+                "Fecha de inicio de la película: " + villano.getAnoInicio() + "\n" +
+                "Fecha del fin de la película: " + villano.getAnoFin() + "\n" +
+                "Películas: " + villano.getPeliculas() + "\n" +
+                "Nombre de personaje: " + villano.getNombre_personaje() + "\n" +
+                "Alias del personaje: " + villano.getAlias_personaje() + "\n" +
+                "Poderes: " + villano.getPoderes() + "\n" +
+                "Debilidades: " + villano.getDebilidades() + "\n" +
+                "Dichos: " + villano.getDichos() + "\n" +
+                "Estado Mental: " + villano.getEstadoMental() + "\n" +
+                "Plan Malevolo: " + villano.getPlanMalevolo() + "\n" +
+                "Complices: " + villano.getComplices() + "\n" +
+                "---------------------------\n";
 
-    public static void dejarBlanco(int numeroArchivo) {
-        File archivo = new File("heroe_info_" + numeroArchivo + ".txt");
-        try (FileWriter writer = new FileWriter(archivo)) {
-            // No se escribe nada en el archivo para vaciarlo
-            JOptionPane.showMessageDialog(null, "Archivo " + numeroArchivo + " limpiado exitosamente");
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombrea))) {
+            writer.write(contenido);
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Error al limpiar el archivo", "Error", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
         }
     }
+    public static void escribirArchivosA (int numeroArchivo, Antiheroe antiheroe) {
+        String nombrea = "archivo" + numeroArchivo + ".txt";
+        String contenido = "Este es el héroe que acabas de crear: \n" +
+                "Nombre: " + antiheroe.getNombre() + "\n" +
+                "Edad: " + antiheroe.getEdad() + "\n" +
+                "Nacionalidad: " + antiheroe.getNacionalidad() + "\n" +
+                "Género: " + antiheroe.getGenero() + "\n" +
+                "Altura: " + antiheroe.getAltura() + "\n" +
+                "Estado Civil: " + antiheroe.getEstadoCivil() + "\n" +
+                "Alias: " + antiheroe.getAlias() + "\n" +
+                "Años de experiencia: " + antiheroe.getAnosCarrera() + "\n" +
+                "Premios: " + antiheroe.getPremios() + "\n" +
+                "Papeles: " + antiheroe.getPapeles() + "\n" +
+                "Fecha de inicio de la película: " + antiheroe.getAnoInicio() + "\n" +
+                "Fecha del fin de la película: " + antiheroe.getAnoFin() + "\n" +
+                "Películas: " + antiheroe.getPeliculas() + "\n" +
+                "Nombre de personaje: " + antiheroe.getNombre_personaje() + "\n" +
+                "Alias del personaje: " + antiheroe.getAlias_personaje() + "\n" +
+                "Poderes: " + antiheroe.getPoderes() + "\n" +
+                "Debilidades: " + antiheroe.getDebilidades() + "\n" +
+                "Dichos: " + antiheroe.getDichos() + "\n" +
+                "Motivación: " + antiheroe.getMotivacion() + "\n" +
+                "Nivel de amenaza: " + antiheroe.getNivelAmenaza() + "\n" +
+                "---------------------------\n";
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombrea))) {
+            writer.write(contenido);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public static void leerArchivos(String nombrea) {
         File file = new File(nombrea);

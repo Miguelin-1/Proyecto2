@@ -21,6 +21,10 @@ public class Villano extends Personaje{
 
     }
 
+    public String getPlanMalevolo() {
+        return planMalevolo;
+    }
+
     public String getEstadoMental() {
         return estadoMental;
     }
