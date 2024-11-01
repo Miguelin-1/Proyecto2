@@ -308,7 +308,7 @@ public class Ventana extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(contarArchivos<=10){
-                    ModificarArchivos.abrirArchivos((contarArchivos));
+                    ModificarArchivos.abrirArchivos((contarArchivos-1));
                     contarArchivos++;
                 }
                 else {
@@ -567,7 +567,7 @@ public class Ventana extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(contarArchivos<=10){
-                    ModificarArchivos.abrirArchivos((contarArchivos));
+                    ModificarArchivos.abrirArchivos((contarArchivos-1));
                     contarArchivos++;
                 }
                 else {
@@ -817,7 +817,7 @@ public class Ventana extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(contarArchivos<=10){
-                    ModificarArchivos.abrirArchivos((contarArchivos));
+                    ModificarArchivos.abrirArchivos((contarArchivos-1));
                     contarArchivos++;
                 }
                 else {
